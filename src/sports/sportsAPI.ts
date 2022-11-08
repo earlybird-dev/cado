@@ -17,6 +17,10 @@ function checkStatus(response: any) {
   }
 }
 
+function parseJSON(response: Response) {
+  return response.json();
+}
+
 function convertToSportModel(data: any[]): Sport[] {
   let sports: Sport[] = data.map((sport) => new Sport(sport));
   return sports;
@@ -26,9 +30,13 @@ const sportsAPI = {
   get() {
     return fetch(url)
       .then(checkStatus)
-      .then((response) => response.json())
-      .then((data) => convertToSportModel(data))
-      .catch((error) => console.log(error));
+      .then(parseJSON)
+      .then(convertToSportModel)
+      .catch((error: TypeError) => {
+        throw new Error(
+          'There was an error retrieving the sports. Please try again.'
+        );
+      });
   },
 };
 
