@@ -68,7 +68,7 @@ body {
       margin-right: 3px;
     }
   }
-  .nav-item {
+  .navbar-nav {
     a {
       color: white;
       &.active {
@@ -78,5 +78,8 @@ body {
         color: $primary;
       }
     }
+  }
+  .navbar-toggler {
+    background-color: $primary;
   }
 }

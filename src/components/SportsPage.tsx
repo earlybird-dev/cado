@@ -23,7 +23,7 @@ const Home = (props: any) => {
 
   return (
     <section className="container">
-      <div className="bg-lightgray text-white">
+      <div className="min-vh-100 bg-lightgray text-white p-3 mb-3">
         <h1>Sports</h1>
         {loading && <div>Loading...</div>}
         <ul>

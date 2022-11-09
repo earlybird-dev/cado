@@ -10894,12 +10894,15 @@ body {
   font-family: "Dancing Script", cursive;
   margin-right: 3px;
 }
-.stn-navbar .nav-item a {
+.stn-navbar .navbar-nav a {
   color: white;
 }
-.stn-navbar .nav-item a.active {
+.stn-navbar .navbar-nav a.active {
   color: #ed1b42;
 }
-.stn-navbar .nav-item a:hover {
+.stn-navbar .navbar-nav a:hover {
   color: #ed1b42;
+}
+.stn-navbar .navbar-toggler {
+  background-color: #ed1b42;
 }/*# sourceMappingURL=index.css.map */
