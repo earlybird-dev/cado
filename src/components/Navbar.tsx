@@ -10,21 +10,25 @@ const Navbar = (props: any) => {
             <span>i</span>Bet
           </a>
           <div className="collapse navbar-collapse" id="navbarNav">
-            <div className="d-flex">
-              <div className="navbar-nav">
-                <Link className="nav-link" to="/">
-                  Home
-                </Link>
-                <Link className="nav-link" to="/sports">
-                  Sports
-                </Link>
+            <div className="d-flex flex-column flex-md-row">
+              <div className="d-flex">
+                <div className="navbar-nav">
+                  <Link className="nav-link" to="/">
+                    Home
+                  </Link>
+                  <Link className="nav-link" to="/sports">
+                    Sports
+                  </Link>
+                </div>
               </div>
-            </div>
-            <div className="d-flex flex-column flex-md-row my-4 my-md-0">
-              <button className="btn navbar-btn text-white me-3">Log In</button>
-              <button className="btn btn-primary navbar-btn text-white">
-                Sign Up
-              </button>
+              <div className="d-flex flex-column flex-md-row my-4 my-md-0">
+                <button className="btn navbar-btn text-white me-3">
+                  Log In
+                </button>
+                <button className="btn btn-primary navbar-btn text-white">
+                  Sign Up
+                </button>
+              </div>
             </div>
           </div>
           <button
