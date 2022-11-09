@@ -1,0 +1,82 @@
+// ======= CUSTOM BOOTSTRAP =======
+// Custom colors
+$primary: #ed1b42;
+$secondary: #959e31;
+$light: #f8f9fa;
+$white: #fff;
+$black: #000000;
+$lightgray: #1b1b1b;
+
+// Import the functions and variables
+@import '../../node_modules/bootstrap/scss/_functions';
+@import '../../node_modules/bootstrap/scss/_variables';
+
+$custom-theme-colors: (
+  'lightgray': $lightgray,
+);
+
+$theme-colors: map-merge($custom-theme-colors, $theme-colors);
+
+// Import Bootstrap, Animate
+@import '../../node_modules/bootstrap/scss/bootstrap';
+
+// Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto&display=swap');
+
+// Font Variables
+$font-primary: 'Roboto', sans-serif;
+$font-secondary: 'Dancing Script', cursive;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: $black;
+  font-family: $font-primary;
+}
+
+.btn {
+  @include border-radius(1.28571rem);
+}
+
+.navbar-btn {
+  text-transform: uppercase;
+  font-size: 0.785714rem;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 0.0357143rem;
+  min-height: 2.42857rem;
+  padding: 0.642857rem 1.07143rem 0.571429rem;
+}
+
+.stn-navbar {
+  .navbar-brand {
+    font-size: 1.5rem;
+    color: $white;
+    span {
+      color: $primary;
+      font-family: $font-secondary;
+      margin-right: 3px;
+    }
+  }
+  .nav-item {
+    a {
+      color: white;
+      &.active {
+        color: $primary;
+      }
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+}
