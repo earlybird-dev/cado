@@ -13,6 +13,7 @@ $lightgray: #1b1b1b;
 
 $custom-theme-colors: (
   'lightgray': $lightgray,
+  'black': $black,
 );
 
 $theme-colors: map-merge($custom-theme-colors, $theme-colors);
@@ -40,7 +41,7 @@ $font-secondary: 'Dancing Script', cursive;
 
 body {
   margin: 0;
-  background-color: $black;
+  background-color: $lightgray;
   font-family: $font-primary;
 }
 
@@ -69,11 +70,9 @@ body {
     }
   }
   .navbar-nav {
-    a {
+    .nav-link {
       color: white;
-      &.active {
-        color: $primary;
-      }
+
       &:hover {
         color: $primary;
       }
@@ -82,4 +81,10 @@ body {
   .navbar-toggler {
     background-color: $primary;
   }
+}
+
+// HERO
+
+.hero {
+  background-image: url('https://pointsbet.com.au/assets/content/au/homecarousel/images/221104-NBA_SGM-CDESK.jpg');
 }
