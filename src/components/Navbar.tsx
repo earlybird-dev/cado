@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Navbar = (props: any) => {
   return (
     <section className="stn-navbar">
-      <nav className="navbar navbar-expand-lg">
+      <nav className="navbar navbar-expand-lg bg-black">
         <div className="container">
           <button
             className="navbar-toggler"
