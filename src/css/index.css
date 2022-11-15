@@ -10944,14 +10944,11 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.btn {
+.navbar-btn {
   -webkit-border-radius: 1.28571rem;
   -moz-border-radius: 1.28571rem;
   -ms-border-radius: 1.28571rem;
   border-radius: 1.28571rem;
-}
-
-.navbar-btn {
   text-transform: uppercase;
   font-size: 0.785714rem;
   font-style: italic;
@@ -10980,6 +10977,47 @@ body {
   background-color: #ed1b42;
 }
 
-.hero {
-  background-image: url("https://pointsbet.com.au/assets/content/au/homecarousel/images/221104-NBA_SGM-CDESK.jpg");
+@media (max-width: 1200px) {
+  .carousel .carousel-item {
+    height: 300px;
+  }
+}
+
+.carousel-caption {
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: rgba(4, 20, 37, 0.5);
+  background-image: linear-gradient(rgba(4, 20, 37, 0.3), rgba(20, 52, 92, 0.6));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: start;
+}
+.carousel-caption h3, .carousel-caption .h3 {
+  font-size: 1.28571rem;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.carousel-caption p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 1rem;
+  line-height: 1.43;
+}
+.carousel-caption .btn {
+  -webkit-border-radius: 1.42857rem;
+  -moz-border-radius: 1.42857rem;
+  -ms-border-radius: 1.42857rem;
+  border-radius: 1.42857rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.785714rem;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 0.0357143rem;
+  min-height: 2.42857rem;
+  padding: 0.642857rem 1.07143rem 0.571429rem;
+  width: 100%;
 }/*# sourceMappingURL=index.css.map */
