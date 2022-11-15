@@ -70,15 +70,15 @@ const Hero = (props: any) => {
         <div className="carousel-inner">
           <CarouselItem
             active={true}
-            src="https://pointsbet.com.au/assets/content/au/homecarousel/images/WorldCup-CDESK.jpg"
-            title="WORLD CUP - SCORE FIRST YOU WIN"
-            body="Early Payout: On Australia Matches in Group Stage, if your selection scores the first goal of the match we'll pay you out as a winner. First $50 staked."
-          />
-          <CarouselItem
-            active={false}
             src="https://pointsbet.com.au/assets/content/au/homecarousel/images/221104-NBA_SGM-CDESK.jpg"
             title="NBA Same Game Multi Offer"
             body="On your first placed 3+ leg NBA SGM each day this week, if 1 leg fails get your stake refunded in Bonus Bets up to $50."
+          />
+          <CarouselItem
+            active={false}
+            src="https://pointsbet.com.au/assets/content/au/homecarousel/images/WorldCup-CDESK.jpg"
+            title="WORLD CUP - SCORE FIRST YOU WIN"
+            body="Early Payout: On Australia Matches in Group Stage, if your selection scores the first goal of the match we'll pay you out as a winner. First $50 staked."
           />
           <CarouselItem
             active={false}

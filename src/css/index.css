@@ -10982,6 +10982,11 @@ body {
     height: 300px;
   }
 }
+@media (max-width: 784px) {
+  .carousel .carousel-item {
+    height: 350px;
+  }
+}
 
 .carousel-caption {
   -webkit-border-radius: 0.5rem;

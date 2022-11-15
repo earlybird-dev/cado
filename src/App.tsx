@@ -1,21 +1,26 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Home from './components/Home';
-import SportsPage from './components/SportsPage';
+import SportsPage from './sports/SportsPage';
+import SingleSportPage from './sports/SingleSportPage';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
-    <Router>
+    <>
       <Navbar />
       <Hero />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/sports" element={<SportsPage />} />
-        <Route path="/sports/:id" element={<SportsPage />} />
+        <Route path="/sports">
+          <Route index element={<SportsPage />} />
+          <Route path=":key" element={<SingleSportPage />} />
+        </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
-    </Router>
+    </>
   );
 }
 

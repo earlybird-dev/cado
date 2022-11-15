@@ -87,6 +87,11 @@ body {
       height: 300px;
     }
   }
+  @media (max-width: 784px) {
+    .carousel-item {
+      height: 350px;
+    }
+  }
 }
 
 .carousel-caption {
