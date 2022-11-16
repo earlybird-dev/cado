@@ -8,8 +8,8 @@ const UpcomingOdd = (props: {
   away_team: string;
 }) => {
   return (
-    <div className="match border-bottom p-2 mb-3">
-      <div className="">
+    <div className="">
+      <div className="match border-bottom p-2 mb-3">
         <div className="">
           <div className="">
             <h5 className="">{props.sport_title}</h5>
@@ -63,17 +63,26 @@ const Home = (props: any) => {
   return (
     <section className="container p-0">
       <div className="min-vh-100 bg-black rounded text-white p-3 mb-3 ">
-        <h1 className="text-white">Upcoming</h1>
-        {loading && <div>Loading...</div>}
-        {upcoming.map((odd) => {
-          return (
-            <UpcomingOdd
-              sport_title={odd.sport_title}
-              home_team={odd.home_team}
-              away_team={odd.away_team}
-            />
-          );
-        })}
+        <div className="row">
+          {loading && <div>Loading...</div>}
+          <div className="col-12 col-lg-8">
+            <h1 className="text-white">Upcoming</h1>
+            {upcoming.map((odd) => {
+              return (
+                <UpcomingOdd
+                  sport_title={odd.sport_title}
+                  home_team={odd.home_team}
+                  away_team={odd.away_team}
+                />
+              );
+            })}
+          </div>
+          <div className="col-12 col-lg-4 bg-primary">
+            <div className="">
+              <h1>...</h1>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
