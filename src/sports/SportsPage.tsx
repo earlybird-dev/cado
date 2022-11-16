@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Sport } from './Sport';
-import { sportsAPI } from './sportsAPI';
+import { sportsAPI } from './api';
 
 const Home = (props: any) => {
   const [loading, setLoading] = useState(false);
@@ -23,7 +23,7 @@ const Home = (props: any) => {
   }, []);
 
   return (
-    <section className="container">
+    <section className="container p-0">
       <div className="min-vh-100 bg-black rounded text-white p-3 mb-3">
         <h1>Sports</h1>
         {loading && <div>Loading...</div>}
