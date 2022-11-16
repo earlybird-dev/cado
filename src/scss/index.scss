@@ -16,6 +16,16 @@ $custom-theme-colors: (
   'black': $black,
 );
 
+$carousel-indicator-width: 5px;
+$carousel-indicator-height: 5px;
+$carousel-indicator-hit-area-height: 10px;
+$carousel-indicator-spacer: 10px;
+$carousel-indicator-opacity: 0.5;
+$carousel-indicator-active-bg: $primary;
+$carousel-indicator-active-opacity: 1;
+
+$carousel-caption-width: 100%;
+
 $theme-colors: map-merge($custom-theme-colors, $theme-colors);
 
 // Import Bootstrap, Animate
@@ -84,12 +94,12 @@ body {
 .carousel {
   @media (max-width: 1200px) {
     .carousel-item {
-      height: 300px;
+      height: 250px;
     }
   }
-  @media (max-width: 784px) {
+  @media (max-width: 768px) {
     .carousel-item {
-      height: 350px;
+      height: 300px;
     }
   }
 }
@@ -103,7 +113,9 @@ body {
   );
   border: 1px solid rgba(255, 255, 255, 0.1);
   text-align: start;
-
+  @media (max-width: 720px) {
+    width: 95%;
+  }
   h3 {
     font-size: 1.28571rem;
     font-style: italic;
@@ -130,5 +142,12 @@ body {
     min-height: 2.42857rem;
     padding: 0.642857rem 1.07143rem 0.571429rem;
     width: 100%;
+  }
+}
+
+.carousel-indicators {
+  button {
+    border-radius: 50%;
+    background-color: $white;
   }
 }

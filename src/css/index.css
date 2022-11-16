@@ -6017,14 +6017,14 @@ textarea.form-control-lg {
 .carousel-indicators [data-bs-target] {
   box-sizing: content-box;
   flex: 0 1 auto;
-  width: 30px;
-  height: 3px;
+  width: 5px;
+  height: 5px;
   padding: 0;
-  margin-right: 3px;
-  margin-left: 3px;
+  margin-right: 10px;
+  margin-left: 10px;
   text-indent: -999px;
   cursor: pointer;
-  background-color: #fff;
+  background-color: #ed1b42;
   background-clip: padding-box;
   border: 0;
   border-top: 10px solid transparent;
@@ -6043,9 +6043,9 @@ textarea.form-control-lg {
 
 .carousel-caption {
   position: absolute;
-  right: 15%;
+  right: 0%;
   bottom: 1.25rem;
-  left: 15%;
+  left: 0%;
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
   color: #fff;
@@ -10979,12 +10979,12 @@ body {
 
 @media (max-width: 1200px) {
   .carousel .carousel-item {
-    height: 300px;
+    height: 250px;
   }
 }
-@media (max-width: 784px) {
+@media (max-width: 768px) {
   .carousel .carousel-item {
-    height: 350px;
+    height: 300px;
   }
 }
 
@@ -10997,6 +10997,11 @@ body {
   background-image: linear-gradient(rgba(4, 20, 37, 0.3), rgba(20, 52, 92, 0.6));
   border: 1px solid rgba(255, 255, 255, 0.1);
   text-align: start;
+}
+@media (max-width: 720px) {
+  .carousel-caption {
+    width: 95%;
+  }
 }
 .carousel-caption h3, .carousel-caption .h3 {
   font-size: 1.28571rem;
@@ -11025,4 +11030,9 @@ body {
   min-height: 2.42857rem;
   padding: 0.642857rem 1.07143rem 0.571429rem;
   width: 100%;
+}
+
+.carousel-indicators button {
+  border-radius: 50%;
+  background-color: #fff;
 }/*# sourceMappingURL=index.css.map */

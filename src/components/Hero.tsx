@@ -11,7 +11,7 @@ function CarouselItem(props: Carousel) {
   return (
     <div className={props.active ? 'carousel-item active' : 'carousel-item'}>
       <img src={props.src} className="d-block w-100" alt="..."></img>
-      <div className="carousel-caption p-4">
+      <div className="carousel-caption container p-4">
         <div className="row gx-5">
           <div className="col-12 col-lg-6">
             <h3>{props.title}</h3>
@@ -39,7 +39,7 @@ function CarouselItem(props: Carousel) {
 
 const Hero = (props: any) => {
   return (
-    <section className="stn-hero h-50">
+    <section className="stn-hero">
       <div
         id="carouselExampleIndicators"
         className="carousel slide"

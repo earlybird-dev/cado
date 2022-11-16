@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home = (props: any) => {
   return (
-    <section className="container">
+    <section className="container p-0">
       <div className="min-vh-100 bg-black rounded text-white p-3 mb-3 ">
         <h1 className="text-white">Home</h1>
       </div>
