@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { oddsAPI } from './api';
-import { Odd } from './Odd';
+import { Odd } from './OddType';
 
 const SingleSportPage = (props: any) => {
   const { key } = useParams();

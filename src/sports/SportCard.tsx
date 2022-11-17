@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sport } from './Sport';
+import { Sport } from './SportType';
 
 const SportCard = (sport: Sport) => {
   return (

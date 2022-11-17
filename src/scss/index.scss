@@ -197,6 +197,35 @@ body {
       right: 0px;
     }
   }
+
+  .nav-link {
+    color: $white;
+    h1 {
+      &:after {
+        background: rgba(255, 255, 255, 0.2);
+        bottom: -0.142857rem;
+        content: '';
+        height: 0.142857rem;
+        left: 0px;
+        position: absolute;
+        right: 0px;
+      }
+    }
+  }
+}
+
+.nav-link.active {
+  h1 {
+    &:after {
+      background: $primary;
+      bottom: -0.142857rem;
+      content: '';
+      height: 0.142857rem;
+      left: 0px;
+      position: absolute;
+      right: 0px;
+    }
+  }
 }
 
 .match {

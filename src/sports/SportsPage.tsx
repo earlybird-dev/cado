@@ -1,8 +1,9 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Sport } from './Sport';
+import { Sport } from './SportType';
 import { sportsAPI } from './api';
+import Loading from '../components/Loading';
 
 const Home = (props: any) => {
   const [loading, setLoading] = useState(false);
@@ -26,7 +27,7 @@ const Home = (props: any) => {
     <section className="container p-0">
       <div className="min-vh-100 bg-black rounded text-white p-3 mb-3">
         <h1>Sports</h1>
-        {loading && <div>Loading...</div>}
+        {loading && <Loading />}
         <ul>
           {sports.map((sport) => (
             <li key={sport.key}>

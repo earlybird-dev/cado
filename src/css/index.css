@@ -11078,6 +11078,28 @@ body {
   position: absolute;
   right: 0px;
 }
+.stn-upcoming .nav-link {
+  color: #fff;
+}
+.stn-upcoming .nav-link h1:after, .stn-upcoming .nav-link .h1:after {
+  background: rgba(255, 255, 255, 0.2);
+  bottom: -0.142857rem;
+  content: "";
+  height: 0.142857rem;
+  left: 0px;
+  position: absolute;
+  right: 0px;
+}
+
+.nav-link.active h1:after, .nav-link.active .h1:after {
+  background: #ed1b42;
+  bottom: -0.142857rem;
+  content: "";
+  height: 0.142857rem;
+  left: 0px;
+  position: absolute;
+  right: 0px;
+}
 
 .match .sport-name {
   font-size: 1.07143rem;

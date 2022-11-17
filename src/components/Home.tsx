@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { upcomingAPI } from '../sports/api';
-import { Odd } from '../sports/Odd';
+import { Odd } from '../sports/OddType';
+import Loading from './Loading';
 
 const UpcomingOdd = (props: {
   sport_title: string;
@@ -17,7 +18,7 @@ const UpcomingOdd = (props: {
         </div>
         <div className="row">
           <div className="col p-1">
-            <button className="">
+            <button className="btn btn-dark">
               <span className="team">{props.home_team}</span>
               <span className="">
                 <span className="d-block">
@@ -27,7 +28,7 @@ const UpcomingOdd = (props: {
             </button>
           </div>
           <div className="col p-1">
-            <button className="">
+            <button className="btn btn-dark">
               <span className="team">{props.away_team}</span>
               <span className="">
                 <span className="d-block">
@@ -65,9 +66,9 @@ const Home = (props: any) => {
       <div className="min-vh-100 p-0 mb-3 ">
         <div className="row g-2">
           <div className="col-12 col-lg-8">
-            <div className="bg-black rounded p-2 p-md-3 p-lg-4">
+            <div className="bg-black rounded p-2 p-md-3 p-lg-4 ">
               <h1 className="text-white">Upcoming</h1>
-              {loading && <div>Loading...</div>}
+              {loading && <Loading />}
               {upcoming.map((odd) => {
                 return (
                   <UpcomingOdd
@@ -81,7 +82,14 @@ const Home = (props: any) => {
           </div>
           <div className="col-12 col-lg-4">
             <div className="bg-black rounded p-2 p-md-3 p-lg-4">
-              <h1>Header Placeholder</h1>
+              <nav className="nav nav-justified">
+                <a className="nav-link active p-0" aria-current="page" href="#">
+                  <h1>NEXT RACING</h1>
+                </a>
+                <a className="nav-link p-0" href="#">
+                  <h1>NEXT SPORTS</h1>
+                </a>
+              </nav>
             </div>
           </div>
         </div>
