@@ -12,7 +12,7 @@ const UpcomingOdd = (props: {
       <div className="match border-bottom p-2 mb-3">
         <div className="">
           <div className="">
-            <h5 className="">{props.sport_title}</h5>
+            <h5 className="sport-name">{props.sport_title}</h5>
           </div>
         </div>
         <div className="row">
@@ -21,7 +21,7 @@ const UpcomingOdd = (props: {
               <span className="team">{props.home_team}</span>
               <span className="">
                 <span className="d-block">
-                  <span className="">2.00</span>
+                  <span className="odd">2.00</span>
                 </span>
               </span>
             </button>
@@ -31,7 +31,7 @@ const UpcomingOdd = (props: {
               <span className="team">{props.away_team}</span>
               <span className="">
                 <span className="d-block">
-                  <span className="">1.74</span>
+                  <span className="odd">1.74</span>
                 </span>
               </span>
             </button>
@@ -61,25 +61,27 @@ const Home = (props: any) => {
   }, []);
 
   return (
-    <section className="container p-0">
-      <div className="min-vh-100 bg-black rounded text-white p-3 mb-3 ">
-        <div className="row">
-          {loading && <div>Loading...</div>}
+    <section className="stn-upcoming container p-0">
+      <div className="min-vh-100 p-0 mb-3 ">
+        <div className="row g-2">
           <div className="col-12 col-lg-8">
-            <h1 className="text-white">Upcoming</h1>
-            {upcoming.map((odd) => {
-              return (
-                <UpcomingOdd
-                  sport_title={odd.sport_title}
-                  home_team={odd.home_team}
-                  away_team={odd.away_team}
-                />
-              );
-            })}
+            <div className="bg-black rounded p-2 p-md-3 p-lg-4">
+              <h1 className="text-white">Upcoming</h1>
+              {loading && <div>Loading...</div>}
+              {upcoming.map((odd) => {
+                return (
+                  <UpcomingOdd
+                    sport_title={odd.sport_title}
+                    home_team={odd.home_team}
+                    away_team={odd.away_team}
+                  />
+                );
+              })}
+            </div>
           </div>
-          <div className="col-12 col-lg-4 bg-primary">
-            <div className="">
-              <h1>...</h1>
+          <div className="col-12 col-lg-4">
+            <div className="bg-black rounded p-2 p-md-3 p-lg-4">
+              <h1>Header Placeholder</h1>
             </div>
           </div>
         </div>
