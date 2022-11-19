@@ -3,53 +3,69 @@ import { Link } from 'react-router-dom';
 import { upcomingAPI } from '../sports/api';
 import { Odd } from '../sports/OddType';
 import Loading from './Loading';
-import { CashOutIcon, InfoIcon, SGMIcon } from './SVGIcon';
+import {
+  CashOutIcon,
+  InfoIcon,
+  RightArrowIcon,
+  SGMIcon,
+  SportIcon,
+} from './SVGIcon';
 
-const Bookmarker = (props: any) => {
-  return (
-    <div className="row bookmarker">
-      <div className="col-12 bookmarker-info d-flex align-items-center justify-content-between">
-        <div className="fddsvlq d-flex align-items-center">
-          <div className="f1jkm6a5 d-flex align-items-center">
-            <span className="f1ry9gvn me-1">
-              <InfoIcon />
-            </span>
-          </div>
-          <h3 className="f1i87hcv">Match Result</h3>
-        </div>
-        <div className="f1ngjn4m">
-          <span></span>
-          <span className="f1ry9gvn me-2">
-            <SGMIcon />
-          </span>
+const Bookmaker = (props: any) => {
+  if (props.markets) {
+    return (
+      <div className="row bookmaker mb-4">
+        {props.markets.map((market: any) => {
+          return (
+            <>
+              <div className="col-12 bookmaker-info d-flex align-items-center justify-content-between mb-1">
+                <div className=" d-flex align-items-center">
+                  <div className=" d-flex align-items-center">
+                    <span className=" me-2">
+                      <InfoIcon />
+                    </span>
+                  </div>
+                  <h3 className="">
+                    {props.title} <span className="dot"></span> {market.key}
+                  </h3>
+                </div>
+                <div className="">
+                  <span></span>
+                  <span className=" me-2">
+                    <SGMIcon />
+                  </span>
 
-          <span className="f1ry9gvn">
-            <CashOutIcon />
-          </span>
-        </div>
+                  <span className="">
+                    <CashOutIcon />
+                  </span>
+                </div>
+              </div>
+              {market.outcomes.map(
+                (outcome: { name: string; price: number }) => {
+                  return (
+                    <>
+                      <div className="col p-1 m-0 mb-2 ">
+                        <button className="btn btn-dark">
+                          <span className="team">{outcome.name}</span>
+                          <span className="">
+                            <span className="d-block">
+                              <span className="odd">{outcome.price}</span>
+                            </span>
+                          </span>
+                        </button>
+                      </div>
+                    </>
+                  );
+                }
+              )}
+            </>
+          );
+        })}
       </div>
-      <div className="col">
-        <button className="btn btn-dark">
-          <span className="team">{props.home_team}</span>
-          <span className="">
-            <span className="d-block">
-              <span className="odd">2.00</span>
-            </span>
-          </span>
-        </button>
-      </div>
-      <div className="col">
-        <button className="btn btn-dark">
-          <span className="team">{props.away_team}</span>
-          <span className="">
-            <span className="d-block">
-              <span className="odd">1.74</span>
-            </span>
-          </span>
-        </button>
-      </div>
-    </div>
-  );
+    );
+  } else {
+    return <></>;
+  }
 };
 
 const UpcomingOdd = (props: {
@@ -57,19 +73,69 @@ const UpcomingOdd = (props: {
   sport_title: string;
   home_team: string;
   away_team: string;
+  bookmakers: {
+    key: string;
+    title: string;
+    last_update: string;
+    markets: { key: string; outcome: { name: string; price: number }[] }[];
+  }[];
 }) => {
   return (
     <div className="">
       <div className="match border-bottom p-2 mb-3">
-        <div className="">
-          <div className="">
-            <h5 className="sport-name">{props.sport_title}</h5>
+        <div className="match-info mb-3">
+          <div className="row">
+            <a
+              className=" d-flex justify-content-between"
+              data-test="sportsPage5EventHeaderLink"
+              href="#"
+            >
+              <div className="col-9 d-flex gap-2 justify-content-start align-items-center">
+                <div className="">
+                  <div className="">
+                    <span className="">
+                      <SportIcon />
+                    </span>
+                  </div>
+                </div>
+                <div className="">
+                  <p className="match-name">
+                    {props.home_team} v {props.away_team}
+                  </p>
+                  <span className="sport-title">
+                    {props.sport_title}
+                    <span className="dot"></span>
+                    <span>Today</span>, <span>3:10pm</span>
+                  </span>
+                </div>
+              </div>
+              <div className="col-3 d-flex gap-2 justify-content-end align-items-center">
+                <div className="">
+                  <div className="">
+                    <span className="">2h 35m</span>
+                  </div>
+                  <span className="">59 Markets</span>
+                </div>
+                <div className="">
+                  <span className="">
+                    <RightArrowIcon />
+                  </span>
+                </div>
+              </div>
+              <div className=""></div>
+            </a>
           </div>
         </div>
-        <div className="bookmarkers d-flex flex-column gap-2">
-          <Bookmarker home_team={props.home_team} away_team={props.away_team} />
-          <Bookmarker home_team={props.home_team} away_team={props.away_team} />
-          <Bookmarker home_team={props.home_team} away_team={props.away_team} />
+        <div className="bookmakers d-flex flex-column gap-2">
+          {props.bookmakers &&
+            props.bookmakers.map((bookmaker) => {
+              return (
+                <Bookmaker
+                  title={bookmaker.title}
+                  markets={bookmaker.markets}
+                />
+              );
+            })}
         </div>
       </div>
     </div>
@@ -109,6 +175,7 @@ const Home = (props: any) => {
                     sport_title={odd.sport_title}
                     home_team={odd.home_team}
                     away_team={odd.away_team}
+                    bookmakers={odd.bookmakers}
                   />
                 );
               })}

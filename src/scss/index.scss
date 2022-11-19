@@ -32,11 +32,11 @@ $theme-colors: map-merge($custom-theme-colors, $theme-colors);
 @import '../../node_modules/bootstrap/scss/bootstrap';
 
 // Google Fonts
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto&family=Rubik+Glitch&display=swap');
 
 // Font Variables
 $font-primary: 'Roboto', sans-serif;
-$font-secondary: 'Dancing Script', cursive;
+$font-secondary: 'Rubik Glitch', cursive;
 
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
@@ -69,16 +69,20 @@ body {
 
 .stn-navbar {
   .navbar-brand {
-    font-size: 1.5rem;
+    font-family: $font-secondary;
+    font-size: 2rem;
     color: $white;
+    text-transform: uppercase;
+    font-style: italic;
+    font-weight: 700;
     span {
       color: $primary;
-      font-family: $font-secondary;
-      margin-right: 3px;
+      // margin-right: 3px;
     }
   }
   .navbar-nav {
     .nav-link {
+      text-transform: uppercase;
       color: white;
 
       &:hover {
@@ -100,9 +104,13 @@ body {
 
 // HERO
 .carousel {
+  .carousel-item {
+    height: 450px;
+  }
+
   @media (max-width: 1200px) {
     .carousel-item {
-      height: 250px;
+      height: 350px;
     }
   }
   @media (max-width: 768px) {
@@ -235,13 +243,24 @@ body {
 }
 
 .match {
-  .sport-name {
-    font-size: 1.07143rem;
-    font-weight: normal;
-    line-height: 1.3;
-    margin: 0px;
-    padding: 0px;
-    text-decoration: none;
+  .match-info {
+    a {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.65);
+      display: inline-block;
+      font-size: 0.857143rem;
+      letter-spacing: 0.0142857rem;
+      margin-top: 0.285714rem;
+    }
+    .match-name {
+      color: rgb(255, 255, 255);
+      font-size: 1.07143rem;
+      font-weight: normal;
+      line-height: 1.3;
+      margin: 0px;
+      padding: 0px;
+      text-decoration: none;
+    }
   }
 
   button {
@@ -277,7 +296,7 @@ body {
     }
   }
 
-  .bookmarker {
+  .bookmaker {
     h3 {
       margin: 0;
       padding: 0;
@@ -291,4 +310,16 @@ body {
       text-transform: uppercase;
     }
   }
+}
+
+// Utility
+.dot {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  display: inline-block;
+  height: 0.285714rem;
+  margin: 0px 0.5rem;
+  position: relative;
+  top: -0.142857rem;
+  width: 0.285714rem;
 }

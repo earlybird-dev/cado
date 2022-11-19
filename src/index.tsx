@@ -14,13 +14,13 @@ import { getAnalytics } from 'firebase/analytics';
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: 'AIzaSyA7oSnd1-G5BSWYU10Yyoscrtno0dsP0_4',
-  authDomain: 'ibet-webet.firebaseapp.com',
-  projectId: 'ibet-webet',
-  storageBucket: 'ibet-webet.appspot.com',
-  messagingSenderId: '20992600791',
-  appId: '1:20992600791:web:9f4a8c7cb31fffd2469e92',
-  measurementId: 'G-2RDG04PHWQ',
+  apiKey: 'AIzaSyCmeVBKh_tziSsLg9gepqQdsNLhGo6lu3s',
+  authDomain: 'cadobet.firebaseapp.com',
+  projectId: 'cadobet',
+  storageBucket: 'cadobet.appspot.com',
+  messagingSenderId: '425266774498',
+  appId: '1:425266774498:web:8b0156aab8ced00c35f9bb',
+  measurementId: 'G-XH3WC8WDQK',
 };
 
 // Initialize Firebase

@@ -74,9 +74,9 @@ const Hero = (props: any) => {
         <div className="carousel-inner">
           <CarouselItem
             active={true}
-            src="https://pointsbet.com.au/assets/content/au/homecarousel/images/221104-NBA_SGM-CDESK.jpg"
-            title="NBA Same Game Multi Offer"
-            body="On your first placed 3+ leg NBA SGM each day this week, if 1 leg fails get your stake refunded in Bonus Bets up to $50."
+            src="https://pointsbet.com.au/assets/content/au/homecarousel/images/Generic-BTE-CDESK.png"
+            title="BEST TOTE EXOTICS ON EVERY RACE"
+            body="This Saturday on All Races at Kembla Grange & Ballarat."
           />
           <CarouselItem
             active={false}
