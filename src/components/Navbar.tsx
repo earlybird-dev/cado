@@ -18,7 +18,7 @@ const Navbar = (props: any) => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <a className="navbar-brand" href="/#">
-            <span>CADO</span>BET
+            <span>CA</span>DO
           </a>
           <div className="collapse navbar-collapse" id="navbarNav">
             <div className="w-100 d-flex flex-column flex-lg-row justify-content-between">

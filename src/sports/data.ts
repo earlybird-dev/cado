@@ -318,14 +318,14 @@ const UPCOMING_TEST_DATA = [
     id: '9bd7c0814ea75344b46454bf61896098',
     sport_key: 'basketball_ncaab',
     sport_title: 'NCAAB',
-    commence_time: '2022-11-16T17:00:00Z',
+    commence_time: '2022-11-19T17:00:00Z',
     home_team: 'Kent State Golden Flashes',
     away_team: 'Arkansas-Pine Bluff Golden Lions',
     bookmakers: [
       {
         key: 'fanduel',
         title: 'FanDuel',
-        last_update: '2022-11-16T07:21:07Z',
+        last_update: '2022-11-19T07:21:07Z',
         markets: [
           {
             key: 'h2h',
@@ -345,7 +345,7 @@ const UPCOMING_TEST_DATA = [
       {
         key: 'pointsbetus',
         title: 'PointsBet (US)',
-        last_update: '2022-11-16T07:16:26Z',
+        last_update: '2022-11-19T07:16:26Z',
         markets: [
           {
             key: 'h2h',
@@ -365,7 +365,7 @@ const UPCOMING_TEST_DATA = [
       {
         key: 'foxbet',
         title: 'FOX Bet',
-        last_update: '2022-11-16T07:16:20Z',
+        last_update: '2022-11-19T07:16:20Z',
         markets: [
           {
             key: 'h2h',
@@ -388,7 +388,7 @@ const UPCOMING_TEST_DATA = [
     id: 'c9042d070563881f56e66406215fec19',
     sport_key: 'icehockey_sweden_allsvenskan',
     sport_title: 'HockeyAllsvenskan',
-    commence_time: '2022-11-16T18:00:00Z',
+    commence_time: '2022-11-19T18:00:00Z',
     home_team: 'AIK',
     away_team: 'HC Vita Hästen',
     bookmakers: [],
@@ -397,7 +397,7 @@ const UPCOMING_TEST_DATA = [
     id: '27fe1da772400b023e23ee0f213e9770',
     sport_key: 'icehockey_sweden_allsvenskan',
     sport_title: 'HockeyAllsvenskan',
-    commence_time: '2022-11-16T18:00:00Z',
+    commence_time: '2022-11-19T18:00:00Z',
     home_team: 'Södertälje SK',
     away_team: 'Almtuna IS',
     bookmakers: [],
@@ -406,7 +406,7 @@ const UPCOMING_TEST_DATA = [
     id: '053edfd24884fe8d18a09b175e55fb6b',
     sport_key: 'icehockey_sweden_allsvenskan',
     sport_title: 'HockeyAllsvenskan',
-    commence_time: '2022-11-16T18:00:00Z',
+    commence_time: '2022-11-19T18:00:00Z',
     home_team: 'IF Björklöven',
     away_team: 'BIK Karlskoga',
     bookmakers: [],
@@ -415,14 +415,14 @@ const UPCOMING_TEST_DATA = [
     id: '3dfa305d75eebad89e8c7daa21444a3f',
     sport_key: 'icehockey_sweden_hockey_league',
     sport_title: 'SHL',
-    commence_time: '2022-11-16T18:00:00Z',
+    commence_time: '2022-11-19T18:00:00Z',
     home_team: 'Brynäs IF',
     away_team: 'Malmö Redhawks',
     bookmakers: [
       {
         key: 'betfair',
         title: 'Betfair',
-        last_update: '2022-11-16T07:20:45Z',
+        last_update: '2022-11-19T07:20:45Z',
         markets: [
           {
             key: 'h2h',
@@ -455,7 +455,7 @@ const UPCOMING_TEST_DATA = [
       {
         key: 'intertops',
         title: 'Intertops',
-        last_update: '2022-11-16T07:19:42Z',
+        last_update: '2022-11-19T07:19:42Z',
         markets: [
           {
             key: 'h2h',
@@ -482,7 +482,7 @@ const UPCOMING_TEST_DATA = [
     id: '5d94bf1f8f2479d4d06742d97a4b9ede',
     sport_key: 'icehockey_sweden_allsvenskan',
     sport_title: 'HockeyAllsvenskan',
-    commence_time: '2022-11-16T18:00:00Z',
+    commence_time: '2022-11-19T18:00:00Z',
     home_team: 'Kristianstads IK',
     away_team: 'Östersunds IK',
     bookmakers: [],
@@ -491,7 +491,7 @@ const UPCOMING_TEST_DATA = [
     id: 'e73d5829c6e7da428d5be5584743732b',
     sport_key: 'icehockey_sweden_allsvenskan',
     sport_title: 'HockeyAllsvenskan',
-    commence_time: '2022-11-16T18:00:00Z',
+    commence_time: '2022-11-19T18:00:00Z',
     home_team: 'Västerviks IK',
     away_team: 'Västerås IK',
     bookmakers: [],
@@ -500,14 +500,14 @@ const UPCOMING_TEST_DATA = [
     id: '9cda64594208bb5157b311a5b5eefbbe',
     sport_key: 'soccer_fa_cup',
     sport_title: 'FA Cup',
-    commence_time: '2022-11-16T19:45:00Z',
+    commence_time: '2022-11-19T19:45:00Z',
     home_team: 'Woking FC',
     away_team: 'Oxford United',
     bookmakers: [
       {
         key: 'fanduel',
         title: 'FanDuel',
-        last_update: '2022-11-16T07:16:10Z',
+        last_update: '2022-11-19T07:16:10Z',
         markets: [
           {
             key: 'h2h',
@@ -531,7 +531,7 @@ const UPCOMING_TEST_DATA = [
       {
         key: 'bovada',
         title: 'Bovada',
-        last_update: '2022-11-16T07:17:53Z',
+        last_update: '2022-11-19T07:17:53Z',
         markets: [
           {
             key: 'h2h',
@@ -555,7 +555,7 @@ const UPCOMING_TEST_DATA = [
       {
         key: 'superbook',
         title: 'SuperBook',
-        last_update: '2022-11-16T07:20:57Z',
+        last_update: '2022-11-19T07:20:57Z',
         markets: [
           {
             key: 'h2h',
@@ -579,7 +579,7 @@ const UPCOMING_TEST_DATA = [
       {
         key: 'betfair',
         title: 'Betfair',
-        last_update: '2022-11-16T07:19:14Z',
+        last_update: '2022-11-19T07:19:14Z',
         markets: [
           {
             key: 'h2h',
@@ -620,7 +620,7 @@ const UPCOMING_TEST_DATA = [
       {
         key: 'barstool',
         title: 'Barstool Sportsbook',
-        last_update: '2022-11-16T07:18:43Z',
+        last_update: '2022-11-19T07:18:43Z',
         markets: [
           {
             key: 'h2h',
@@ -644,7 +644,7 @@ const UPCOMING_TEST_DATA = [
       {
         key: 'unibet_us',
         title: 'Unibet',
-        last_update: '2022-11-16T07:16:10Z',
+        last_update: '2022-11-19T07:16:10Z',
         markets: [
           {
             key: 'h2h',
@@ -668,7 +668,7 @@ const UPCOMING_TEST_DATA = [
       {
         key: 'sugarhouse',
         title: 'SugarHouse',
-        last_update: '2022-11-16T07:21:05Z',
+        last_update: '2022-11-19T07:21:05Z',
         markets: [
           {
             key: 'h2h',
@@ -692,7 +692,7 @@ const UPCOMING_TEST_DATA = [
       {
         key: 'intertops',
         title: 'Intertops',
-        last_update: '2022-11-16T07:16:59Z',
+        last_update: '2022-11-19T07:16:59Z',
         markets: [
           {
             key: 'h2h',
@@ -716,7 +716,7 @@ const UPCOMING_TEST_DATA = [
       {
         key: 'lowvig',
         title: 'LowVig.ag',
-        last_update: '2022-11-16T07:19:55Z',
+        last_update: '2022-11-19T07:19:55Z',
         markets: [
           {
             key: 'h2h',
@@ -740,7 +740,7 @@ const UPCOMING_TEST_DATA = [
       {
         key: 'betonlineag',
         title: 'BetOnline.ag',
-        last_update: '2022-11-16T07:20:31Z',
+        last_update: '2022-11-19T07:20:31Z',
         markets: [
           {
             key: 'h2h',

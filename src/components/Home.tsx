@@ -17,7 +17,7 @@ const Bookmaker = (props: any) => {
       <div className="row bookmaker mb-4">
         {props.markets.map((market: any) => {
           return (
-            <>
+            <div key={market.key} className="row">
               <div className="col-12 bookmaker-info d-flex align-items-center justify-content-between mb-1">
                 <div className=" d-flex align-items-center">
                   <div className=" d-flex align-items-center">
@@ -43,22 +43,20 @@ const Bookmaker = (props: any) => {
               {market.outcomes.map(
                 (outcome: { name: string; price: number }) => {
                   return (
-                    <>
-                      <div className="col p-1 m-0 mb-2 ">
-                        <button className="btn btn-dark">
-                          <span className="team">{outcome.name}</span>
-                          <span className="">
-                            <span className="d-block">
-                              <span className="odd">{outcome.price}</span>
-                            </span>
+                    <div key={outcome.name} className="col p-1 m-0 mb-2 ">
+                      <button className="btn btn-dark">
+                        <span className="team">{outcome.name}</span>
+                        <span className="">
+                          <span className="d-block">
+                            <span className="odd">{outcome.price}</span>
                           </span>
-                        </button>
-                      </div>
-                    </>
+                        </span>
+                      </button>
+                    </div>
                   );
                 }
               )}
-            </>
+            </div>
           );
         })}
       </div>
@@ -71,6 +69,7 @@ const Bookmaker = (props: any) => {
 const UpcomingOdd = (props: {
   sport_key: string;
   sport_title: string;
+  commence_time: string;
   home_team: string;
   away_team: string;
   bookmakers: {
@@ -80,6 +79,9 @@ const UpcomingOdd = (props: {
     markets: { key: string; outcome: { name: string; price: number }[] }[];
   }[];
 }) => {
+  const date = props.commence_time.slice(0, 10);
+  const time = props.commence_time.slice(11, 16);
+
   return (
     <div className="">
       <div className="match border-bottom p-2 mb-3">
@@ -105,7 +107,7 @@ const UpcomingOdd = (props: {
                   <span className="sport-title">
                     {props.sport_title}
                     <span className="dot"></span>
-                    <span>Today</span>, <span>3:10pm</span>
+                    <span>{date}</span>, <span>{time}</span>
                   </span>
                 </div>
               </div>
@@ -131,6 +133,7 @@ const UpcomingOdd = (props: {
             props.bookmakers.map((bookmaker) => {
               return (
                 <Bookmaker
+                  key={bookmaker.key}
                   title={bookmaker.title}
                   markets={bookmaker.markets}
                 />
@@ -171,10 +174,12 @@ const Home = (props: any) => {
               {upcoming.map((odd) => {
                 return (
                   <UpcomingOdd
+                    key={odd.id}
                     sport_key={odd.sport_key}
                     sport_title={odd.sport_title}
                     home_team={odd.home_team}
                     away_team={odd.away_team}
+                    commence_time={odd.commence_time}
                     bookmakers={odd.bookmakers}
                   />
                 );

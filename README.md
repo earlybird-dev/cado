@@ -1,4 +1,4 @@
 # Installation
 
-`npx create-react-app ibet --template typescript`
+`npx create-react-app cado --template typescript`
 `npm install typestyle --save`

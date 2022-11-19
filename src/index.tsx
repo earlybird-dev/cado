@@ -14,13 +14,13 @@ import { getAnalytics } from 'firebase/analytics';
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: 'AIzaSyCmeVBKh_tziSsLg9gepqQdsNLhGo6lu3s',
-  authDomain: 'cadobet.firebaseapp.com',
-  projectId: 'cadobet',
-  storageBucket: 'cadobet.appspot.com',
-  messagingSenderId: '425266774498',
-  appId: '1:425266774498:web:8b0156aab8ced00c35f9bb',
-  measurementId: 'G-XH3WC8WDQK',
+  apiKey: 'AIzaSyCrZMqxYsx-phZJp1JQc2ADkkxWVusX3uc',
+  authDomain: 'cado-2022.firebaseapp.com',
+  projectId: 'cado-2022',
+  storageBucket: 'cado-2022.appspot.com',
+  messagingSenderId: '382760892449',
+  appId: '1:382760892449:web:db11699011865370714b60',
+  measurementId: 'G-P00ZB9QZHS',
 };
 
 // Initialize Firebase
