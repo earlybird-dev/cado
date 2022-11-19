@@ -11048,9 +11048,6 @@ body {
     font-size: 0.5rem;
   }
 }
-.carousel-caption .promo-icon path {
-  fill: rgb(237, 27, 66);
-}
 
 .carousel-indicators button {
   border-radius: 50%;
@@ -11139,16 +11136,4 @@ body {
   line-height: 1.28571rem;
   margin-bottom: 0.357143rem;
   padding: 0px 0.214286rem;
-}
-.match .bookmarker h3, .match .bookmarker .h3 {
-  margin: 0;
-  padding: 0;
-  align-items: center;
-  color: rgb(255, 255, 255);
-  display: flex;
-  font-size: 0.857143rem;
-  font-weight: 400;
-  letter-spacing: 0.0142857rem;
-  line-height: 0.857143rem;
-  text-transform: uppercase;
 }/*# sourceMappingURL=index.css.map */
