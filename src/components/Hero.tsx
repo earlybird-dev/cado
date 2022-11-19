@@ -1,4 +1,5 @@
 import React from 'react';
+import { PromoIcon } from './SVGIcon';
 
 interface Carousel {
   active: boolean | undefined;
@@ -21,6 +22,9 @@ function CarouselItem(props: Carousel) {
             <div className="row flex-fill">
               <div className="col">
                 <a className="btn" href="/promos">
+                  <span className="promo-icon me-1">
+                    <PromoIcon />
+                  </span>
                   See all promos
                 </a>
               </div>
