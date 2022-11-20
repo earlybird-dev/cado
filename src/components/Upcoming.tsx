@@ -52,7 +52,7 @@ const Outcomes = (props: any) => {
 const Bookmaker = (props: any) => {
   if (props.markets) {
     return (
-      <div className="row bookmaker mb-4 ">
+      <div className="row bookmaker mb-4">
         {props.markets.map((market: any) => {
           return (
             <div key={market.key} className="row m-0 p-0">

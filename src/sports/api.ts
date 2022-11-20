@@ -53,7 +53,7 @@ const sportsAPI = {
     //     });
 
     return fetch('')
-      .then(delay(1200))
+      .then(delay(600))
       .then(() => {
         return SPORTS_TEST_DATA;
       });
@@ -74,7 +74,7 @@ const oddsAPI = {
     //   });
 
     return fetch('')
-      .then(delay(1200))
+      .then(delay(600))
       .then(() => {
         return UPCOMING_TEST_DATA;
       });
@@ -95,7 +95,7 @@ const upcomingAPI = {
     //   });
 
     return fetch('')
-      .then(delay(1200))
+      .then(delay(600))
       .then(() => {
         return UPCOMING_TEST_DATA;
       });

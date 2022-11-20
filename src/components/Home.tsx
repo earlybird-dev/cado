@@ -14,6 +14,7 @@ const Home = (props: any) => {
     'Soccer',
     'Tennis',
     'Cricket',
+    'American Football',
     'Boxing',
   ]);
 
@@ -42,8 +43,8 @@ const Home = (props: any) => {
     };
 
     return (
-      <div id="sport-filter" className=" mt-3 mb-4">
-        <div className="d-flex flex-row">
+      <div id="sport-filter" className=" my-4">
+        <div className="d-flex flex-row justify-content-between">
           <button
             className="scroll-btn scroll-btn-left m-0 p-0"
             aria-label="Scroll left"
@@ -130,8 +131,7 @@ const Home = (props: any) => {
           <div id="upcoming" className="col-12 col-lg-8">
             <div className="bg-black rounded p-2 p-md-3 p-lg-4 ">
               <h1 className="text-white">Upcoming</h1>
-              {loading && <Loading />}
-              {upcoming && <FilterUpcoming upcoming={upcoming} />}
+              {loading ? <Loading /> : <FilterUpcoming upcoming={upcoming} />}
             </div>
           </div>
           <div id="next" className="col-12 col-lg-4">
