@@ -52,7 +52,7 @@ const Outcomes = (props: any) => {
 const Bookmaker = (props: any) => {
   if (props.markets) {
     return (
-      <div className="row bookmaker mb-4">
+      <div className="row bookmaker mb-3">
         {props.markets.map((market: any) => {
           return (
             <div key={market.key} className="row m-0 p-0">
@@ -151,7 +151,7 @@ const UpcomingSport = (props: {
             </a>
           </div>
         </div>
-        <div className="bookmakers d-flex flex-column gap-2">
+        <div className="bookmakers d-flex flex-column gap-1">
           {props.bookmakers &&
             props.bookmakers.map((bookmaker) => {
               return (
