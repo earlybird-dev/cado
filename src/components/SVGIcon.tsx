@@ -5,7 +5,7 @@ const PromoIcon = () => {
     <svg
       width="18"
       height="18"
-      className="fpz9ar8"
+      className=""
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
       strokeWidth="1"
@@ -37,7 +37,7 @@ const InfoIcon = () => {
     <svg
       width="18"
       height="18"
-      className="fpz9ar8"
+      className=""
       viewBox="0 -64 1024 1024"
       xmlns="http://www.w3.org/2000/svg"
       strokeWidth="1"
@@ -57,7 +57,7 @@ const SGMIcon = () => {
     <svg
       width="25"
       height="25"
-      className="fpz9ar8"
+      className=""
       viewBox="0 0 18 18"
       xmlns="http://www.w3.org/2000/svg"
       strokeWidth="1"
@@ -76,7 +76,7 @@ const CashOutIcon = () => {
   return (
     <svg
       width="48"
-      className="fpz9ar8"
+      className=""
       viewBox="0 0 3128 1064"
       xmlns="http://www.w3.org/2000/svg"
       strokeWidth="1"
@@ -148,7 +148,7 @@ const SportIcon = () => {
     <svg
       width="18"
       height="18"
-      className="fpz9ar8"
+      className=""
       viewBox="0 -64 1024 1024"
       xmlns="http://www.w3.org/2000/svg"
       strokeWidth="1"
@@ -168,7 +168,7 @@ const RightArrowIcon = () => {
     <svg
       width="14"
       height="14"
-      className="fpz9ar8"
+      className=""
       viewBox="0 -64 1024 1024"
       xmlns="http://www.w3.org/2000/svg"
       strokeWidth="1"
@@ -183,4 +183,32 @@ const RightArrowIcon = () => {
   );
 };
 
-export { PromoIcon, InfoIcon, SGMIcon, CashOutIcon, SportIcon, RightArrowIcon };
+const LeftArrowIcon = () => {
+  return (
+    <svg
+      width="14"
+      height="14"
+      className=""
+      viewBox="0 -64 1024 1024"
+      xmlns="http://www.w3.org/2000/svg"
+      strokeWidth="1"
+    >
+      <path
+        transform="translate(0, 896), scale(1, -1)"
+        stroke="#ED1B42"
+        fill="#ED1B42"
+        d="M691.2 934.4l128-119.467-366.933-366.933 366.933-366.933-128-119.467-486.4 486.4z"
+      ></path>
+    </svg>
+  );
+};
+
+export {
+  PromoIcon,
+  InfoIcon,
+  SGMIcon,
+  CashOutIcon,
+  SportIcon,
+  RightArrowIcon,
+  LeftArrowIcon,
+};

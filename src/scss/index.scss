@@ -190,7 +190,6 @@ body {
 // END HERO
 
 // UPCOMING SECTION
-
 .stn-upcoming {
   h1 {
     align-items: center;
@@ -314,6 +313,103 @@ body {
       letter-spacing: 0.0142857rem;
       line-height: 0.857143rem;
       text-transform: uppercase;
+    }
+  }
+}
+
+#sport-filter {
+  #sport-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  #sport-list {
+    scroll-behavior: smooth;
+  }
+
+  .sport-btn {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    transition: background 0.1s ease 0s, color 0.1s ease 0s, border 0.1s ease 0s;
+    user-select: none;
+    white-space: nowrap;
+    width: 100%;
+    border-radius: 1.21429rem;
+    font-size: 0.785714rem;
+    font-style: italic;
+    font-weight: 600;
+    height: 2.42857rem;
+    letter-spacing: 0.0357143rem;
+    padding-left: 1.28571rem;
+    padding-right: 1.28571rem;
+    text-transform: uppercase;
+  }
+
+  .selected-sport {
+    background: rgba(237, 27, 66, 0.4);
+    border: 1px solid rgba(237, 27, 66, 0.5);
+    color: rgb(255, 255, 255);
+  }
+
+  .scroll-btn-right {
+    padding-left: 1.14286rem;
+    padding-right: 0.714286rem;
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    pointer-events: auto;
+    // width: 3rem;
+    z-index: 1;
+    background-color: transparent;
+    border: 0;
+    color: inherit;
+    font-family: inherit;
+    cursor: pointer;
+    position: relative;
+
+    &:before {
+      bottom: 0px;
+      content: '';
+      pointer-events: none;
+      position: absolute;
+      top: 0px;
+      width: 4.71429rem;
+      z-index: -1;
+      background-image: linear-gradient(to left, $black, transparent);
+      right: 0px;
+    }
+  }
+  .scroll-btn-left {
+    padding-left: 1.14286rem;
+    padding-right: 0.714286rem;
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    pointer-events: auto;
+    // width: 3rem;
+    z-index: 1;
+    background-color: transparent;
+    border: 0;
+    color: inherit;
+    font-family: inherit;
+    cursor: pointer;
+    position: relative;
+
+    &:before {
+      bottom: 0px;
+      content: '';
+      pointer-events: none;
+      position: absolute;
+      top: 0px;
+      width: 4.71429rem;
+      z-index: -1;
+      background-image: linear-gradient(to right, $black, transparent);
+      left: 0px;
     }
   }
 }

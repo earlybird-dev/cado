@@ -4,7 +4,7 @@ import { Odd } from './OddType';
 import { SPORTS_TEST_DATA, UPCOMING_TEST_DATA } from './data';
 
 const url = 'https://api.the-odds-api.com/v4/sports';
-const apiKey = '0a2c23d47f334a59643c37c212f8ac83';
+const apiKey = '947a3cf2a3a6377b4c11c9d1b5b2a804';
 const sportUrl = `${url}?apiKey=${apiKey}`;
 
 function delay(ms: number) {
@@ -42,15 +42,15 @@ function convertToOddModel(data: any[]): Odd[] {
 
 const sportsAPI = {
   get() {
-    // return fetch(sportUrl)
-    //   .then(checkStatus)
-    //   .then(parseJSON)
-    //   .then(convertToSportModel)
-    //   .catch((error: TypeError) => {
-    //     throw new Error(
-    //       'There was an error retrieving the sports. Please try again.'
-    //     );
-    //   });
+    //   return fetch(sportUrl)
+    //     .then(checkStatus)
+    //     .then(parseJSON)
+    //     .then(convertToSportModel)
+    //     .catch((error: TypeError) => {
+    //       throw new Error(
+    //         'There was an error retrieving the sports. Please try again.'
+    //       );
+    //     });
 
     return fetch('')
       .then(delay(1200))
@@ -62,7 +62,7 @@ const sportsAPI = {
 
 const oddsAPI = {
   get() {
-    // const oddUrl = `https://api.the-odds-api.com/v4/sports/upcoming/odds/?regions=us&markets=h2h&apiKey=0a2c23d47f334a59643c37c212f8ac83`;
+    // const oddUrl = `https://api.the-odds-api.com/v4/sports/upcoming/odds/?regions=us&markets=h2h&apiKey=${apiKey}`;
     // return fetch(oddUrl)
     //   .then(checkStatus)
     //   .then(parseJSON)
@@ -72,6 +72,7 @@ const oddsAPI = {
     //       'There was an error retrieving the odds. Please try again.'
     //     );
     //   });
+
     return fetch('')
       .then(delay(1200))
       .then(() => {
@@ -82,16 +83,17 @@ const oddsAPI = {
 
 const upcomingAPI = {
   get() {
-    // const upcomingUrl = `https://api.the-odds-api.com/v4/sports/upcoming/odds/?regions=us&markets=h2h&apiKey=0a2c23d47f334a59643c37c212f8ac83`;
+    // const upcomingUrl = `https://api.the-odds-api.com/v4/sports/upcoming/odds/?regions=us&markets=h2h&apiKey=${apiKey}`;
     // return fetch(upcomingUrl)
     //   .then(checkStatus)
-    //   .then(UPCOMING_ODDS_TEST)
+    //   .then(parseJSON)
     //   .then(convertToOddModel)
     //   .catch((error: TypeError) => {
     //     throw new Error(
     //       'There was an error retrieving the odds. Please try again.'
     //     );
     //   });
+
     return fetch('')
       .then(delay(1200))
       .then(() => {

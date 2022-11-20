@@ -11168,6 +11168,93 @@ body {
   text-transform: uppercase;
 }
 
+#sport-filter #sport-list::-webkit-scrollbar {
+  display: none;
+}
+#sport-filter #sport-list {
+  scroll-behavior: smooth;
+}
+#sport-filter .sport-btn {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  transition: background 0.1s ease 0s, color 0.1s ease 0s, border 0.1s ease 0s;
+  user-select: none;
+  white-space: nowrap;
+  width: 100%;
+  border-radius: 1.21429rem;
+  font-size: 0.785714rem;
+  font-style: italic;
+  font-weight: 600;
+  height: 2.42857rem;
+  letter-spacing: 0.0357143rem;
+  padding-left: 1.28571rem;
+  padding-right: 1.28571rem;
+  text-transform: uppercase;
+}
+#sport-filter .selected-sport {
+  background: rgba(237, 27, 66, 0.4);
+  border: 1px solid rgba(237, 27, 66, 0.5);
+  color: rgb(255, 255, 255);
+}
+#sport-filter .scroll-btn-right {
+  padding-left: 1.14286rem;
+  padding-right: 0.714286rem;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  pointer-events: auto;
+  z-index: 1;
+  background-color: transparent;
+  border: 0;
+  color: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  position: relative;
+}
+#sport-filter .scroll-btn-right:before {
+  bottom: 0px;
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  top: 0px;
+  width: 4.71429rem;
+  z-index: -1;
+  background-image: linear-gradient(to left, #000000, transparent);
+  right: 0px;
+}
+#sport-filter .scroll-btn-left {
+  padding-left: 1.14286rem;
+  padding-right: 0.714286rem;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  pointer-events: auto;
+  z-index: 1;
+  background-color: transparent;
+  border: 0;
+  color: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  position: relative;
+}
+#sport-filter .scroll-btn-left:before {
+  bottom: 0px;
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  top: 0px;
+  width: 4.71429rem;
+  z-index: -1;
+  background-image: linear-gradient(to right, #000000, transparent);
+  left: 0px;
+}
+
 .dot {
   background: rgba(255, 255, 255, 0.4);
   border-radius: 50%;
