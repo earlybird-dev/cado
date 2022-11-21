@@ -46,6 +46,34 @@ $font-secondary: 'Rubik Glitch', cursive;
   border-radius: $radius;
 }
 
+@mixin scroll-btn {
+  padding-left: 1.14286rem;
+  padding-right: 0.714286rem;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  pointer-events: auto;
+  // width: 3rem;
+  z-index: 1;
+  background-color: transparent;
+  border: 0;
+  color: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  position: relative;
+}
+
+@mixin scroll-btn-before {
+  bottom: 0px;
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  top: 0px;
+  width: 4.71429rem;
+  z-index: -1;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -322,10 +350,6 @@ body {
     display: none;
   }
 
-  #sport-list {
-    scroll-behavior: smooth;
-  }
-
   .sport-btn {
     align-items: center;
     cursor: pointer;
@@ -355,59 +379,19 @@ body {
   }
 
   .scroll-btn-right {
-    padding-left: 1.14286rem;
-    padding-right: 0.714286rem;
-    align-items: stretch;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    pointer-events: auto;
-    // width: 3rem;
-    z-index: 1;
-    background-color: transparent;
-    border: 0;
-    color: inherit;
-    font-family: inherit;
-    cursor: pointer;
-    position: relative;
+    @include scroll-btn;
 
     &:before {
-      bottom: 0px;
-      content: '';
-      pointer-events: none;
-      position: absolute;
-      top: 0px;
-      width: 4.71429rem;
-      z-index: -1;
+      @include scroll-btn-before;
       background-image: linear-gradient(to left, $black, transparent);
       right: 0px;
     }
   }
   .scroll-btn-left {
-    padding-left: 1.14286rem;
-    padding-right: 0.714286rem;
-    align-items: stretch;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    pointer-events: auto;
-    // width: 3rem;
-    z-index: 1;
-    background-color: transparent;
-    border: 0;
-    color: inherit;
-    font-family: inherit;
-    cursor: pointer;
-    position: relative;
+    @include scroll-btn;
 
     &:before {
-      bottom: 0px;
-      content: '';
-      pointer-events: none;
-      position: absolute;
-      top: 0px;
-      width: 4.71429rem;
-      z-index: -1;
+      @include scroll-btn-before;
       background-image: linear-gradient(to right, $black, transparent);
       left: 0px;
     }

@@ -137,7 +137,7 @@ const UpcomingSport = (props: {
               <div className="col-3 d-flex gap-2 justify-content-end align-items-center">
                 <div className="">
                   <div className="">
-                    <span className="">2h 35m</span>
+                    <span className="">0h 00m</span>
                   </div>
                   <span className="">{props.bookmakers.length} Markets</span>
                 </div>

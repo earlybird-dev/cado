@@ -34,25 +34,30 @@ const Home = (props: any) => {
 
   const SportFilter = () => {
     const ScrollRight = () => {
-      const sportList: any = document.getElementById('sport-list');
+      const sportList: HTMLElement | null = document.getElementById(
+        'sport-list'
+      );
       const scrollRightBtn: HTMLElement | null = document.getElementById(
         'scroll-right-btn'
       );
       const scrollLeftBtn: HTMLElement | null = document.getElementById(
         'scroll-left-btn'
       );
-      const step = 53;
-      sportList.scrollLeft += step;
-      console.log('sportList.scrollLeft', sportList.scrollLeft);
-      console.log(Number.isInteger(sportList.scrollLeft / step));
+      const step = 1000;
+      sportList &&
+        sportList.scrollBy({
+          top: 0,
+          left: +1000,
+          behavior: 'smooth',
+        });
 
-      if (!Number.isInteger(sportList.scrollLeft / step)) {
-        scrollLeftBtn && scrollLeftBtn.classList.remove('d-none');
-        scrollRightBtn && scrollRightBtn.classList.add('d-none');
-      }
+      scrollLeftBtn && scrollLeftBtn.classList.remove('d-none');
+      scrollRightBtn && scrollRightBtn.classList.add('d-none');
     };
     const ScrollLeft = () => {
-      const sportList: any = document.getElementById('sport-list');
+      const sportList: HTMLElement | null = document.getElementById(
+        'sport-list'
+      );
       const scrollRightBtn: HTMLElement | null = document.getElementById(
         'scroll-right-btn'
       );
@@ -60,13 +65,15 @@ const Home = (props: any) => {
         'scroll-left-btn'
       );
 
-      const step = 53;
-      sportList.scrollLeft -= step;
-      console.log('sportList.scrollLeft', sportList.scrollLeft);
-      if (sportList.scrollLeft === 0) {
-        scrollLeftBtn && scrollLeftBtn.classList.add('d-none');
-        scrollRightBtn && scrollRightBtn.classList.remove('d-none');
-      }
+      const step = 1000;
+      sportList &&
+        sportList.scrollBy({
+          top: 0,
+          left: -1000,
+          behavior: 'smooth',
+        });
+      scrollLeftBtn && scrollLeftBtn.classList.add('d-none');
+      scrollRightBtn && scrollRightBtn.classList.remove('d-none');
     };
 
     return (
@@ -85,7 +92,7 @@ const Home = (props: any) => {
           </button>
           <div
             id="sport-list"
-            className="d-flex flex-row gap-1 mx-3 overflow-auto"
+            className="d-flex flex-row gap-1 mx-1 overflow-auto"
           >
             <button
               className="btn btn-dark sport-btn selected-sport "

@@ -11171,9 +11171,6 @@ body {
 #sport-filter #sport-list::-webkit-scrollbar {
   display: none;
 }
-#sport-filter #sport-list {
-  scroll-behavior: smooth;
-}
 #sport-filter .sport-btn {
   align-items: center;
   cursor: pointer;
