@@ -1,8 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Sport } from './SportType';
-import { sportsAPI } from './api';
+import { Sport } from '../utilities/SportType';
+import { sportsAPI } from '../utilities/api';
 import Loading from '../components/Loading';
 
 const Home = (props: any) => {

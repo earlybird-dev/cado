@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { upcomingAPI } from '../sports/api';
-import { Odd } from '../sports/OddType';
+import { upcomingAPI } from '../utilities/api';
+import { Odd } from '../utilities/OddType';
 import Loading from './Loading';
 import { LeftArrowIcon, RightArrowIcon, SportIcon } from './SVGIcon';
 import { UpcomingSport } from './Upcoming';
@@ -35,18 +35,46 @@ const Home = (props: any) => {
   const SportFilter = () => {
     const ScrollRight = () => {
       const sportList: any = document.getElementById('sport-list');
-      sportList.scrollLeft += 50;
+      const scrollRightBtn: HTMLElement | null = document.getElementById(
+        'scroll-right-btn'
+      );
+      const scrollLeftBtn: HTMLElement | null = document.getElementById(
+        'scroll-left-btn'
+      );
+      const step = 53;
+      sportList.scrollLeft += step;
+      console.log('sportList.scrollLeft', sportList.scrollLeft);
+      console.log(Number.isInteger(sportList.scrollLeft / step));
+
+      if (!Number.isInteger(sportList.scrollLeft / step)) {
+        scrollLeftBtn && scrollLeftBtn.classList.remove('d-none');
+        scrollRightBtn && scrollRightBtn.classList.add('d-none');
+      }
     };
     const ScrollLeft = () => {
       const sportList: any = document.getElementById('sport-list');
-      sportList.scrollLeft -= 50;
+      const scrollRightBtn: HTMLElement | null = document.getElementById(
+        'scroll-right-btn'
+      );
+      const scrollLeftBtn: HTMLElement | null = document.getElementById(
+        'scroll-left-btn'
+      );
+
+      const step = 53;
+      sportList.scrollLeft -= step;
+      console.log('sportList.scrollLeft', sportList.scrollLeft);
+      if (sportList.scrollLeft === 0) {
+        scrollLeftBtn && scrollLeftBtn.classList.add('d-none');
+        scrollRightBtn && scrollRightBtn.classList.remove('d-none');
+      }
     };
 
     return (
       <div id="sport-filter" className=" my-4">
         <div className="d-flex flex-row justify-content-between">
           <button
-            className="scroll-btn scroll-btn-left m-0 p-0"
+            id="scroll-left-btn"
+            className="scroll-btn scroll-btn-left m-0 p-0 d-none"
             aria-label="Scroll left"
             data-test="leftArrowTabButton"
             onClick={ScrollLeft}
