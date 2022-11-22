@@ -15,7 +15,7 @@ const SingleSportPage = (props: any) => {
     async function getUpcoming() {
       setLoading(true);
       try {
-        const data = await upcomingBySportAPI.get();
+        const data = await upcomingBySportAPI.get(key);
         console.log(data);
         setUpcoming(data);
         setSport(data[0].sport_title);
