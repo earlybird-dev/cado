@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   CashOutIcon,
   InfoIcon,
@@ -128,7 +129,9 @@ const UpcomingSport = (props: {
                     {props.home_team} v {props.away_team}
                   </p>
                   <span className="sport-title">
-                    {props.sport_title}
+                    <Link to={'/sports/' + props.sport_key}>
+                      {props.sport_title}
+                    </Link>
                     <span className="dot"></span>
                     <span>{date}</span>, <span>{time}</span>
                   </span>

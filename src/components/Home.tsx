@@ -25,6 +25,14 @@ const Home = (props: any) => {
         const data = await upcomingAPI.get();
         console.log(data);
         setUpcoming(data);
+        let sportList;
+        sportList = new Set(
+          data.map((match) => {
+            return match.sport_title;
+          })
+        );
+        console.log('sportList', sportList);
+        setSports(Array.from(sportList).sort());
       } finally {
         setLoading(false);
       }
