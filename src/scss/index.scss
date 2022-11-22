@@ -85,6 +85,10 @@ body {
   background-color: $lightgray;
 }
 
+// h1 {
+//   font-family: $font-secondary;
+// }
+
 // NAVBAR
 
 .navbar-btn {
@@ -243,6 +247,11 @@ body {
       position: absolute;
       right: 0px;
     }
+  }
+
+  .sport-header {
+    font-size: 1.857143rem;
+    color: $primary;
   }
 
   .nav-link {

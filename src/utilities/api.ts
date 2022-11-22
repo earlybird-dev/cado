@@ -1,7 +1,11 @@
 import React from 'react';
 import { Sport } from './SportType';
 import { Odd } from './OddType';
-import { SPORTS_TEST_DATA, UPCOMING_TEST_DATA } from './data';
+import {
+  SPORTS_TEST_DATA,
+  UPCOMING_BY_SPORT_TEST_DATA,
+  UPCOMING_TEST_DATA,
+} from './data';
 
 const url = 'https://api.the-odds-api.com/v4/sports';
 const apiKey = '947a3cf2a3a6377b4c11c9d1b5b2a804';
@@ -60,27 +64,6 @@ const sportsAPI = {
   },
 };
 
-const oddsAPI = {
-  get() {
-    // const oddUrl = `https://api.the-odds-api.com/v4/sports/upcoming/odds/?regions=us&markets=h2h&apiKey=${apiKey}`;
-    // return fetch(oddUrl)
-    //   .then(checkStatus)
-    //   .then(parseJSON)
-    //   .then(convertToOddModel)
-    //   .catch((error: TypeError) => {
-    //     throw new Error(
-    //       'There was an error retrieving the odds. Please try again.'
-    //     );
-    //   });
-
-    return fetch('')
-      .then(delay(600))
-      .then(() => {
-        return UPCOMING_TEST_DATA;
-      });
-  },
-};
-
 const upcomingAPI = {
   get() {
     // const upcomingUrl = `https://api.the-odds-api.com/v4/sports/upcoming/odds/?regions=us&markets=h2h&apiKey=${apiKey}`;
@@ -102,4 +85,25 @@ const upcomingAPI = {
   },
 };
 
-export { sportsAPI, oddsAPI, upcomingAPI };
+const upcomingBySportAPI = {
+  get() {
+    // const oddUrl = `https://api.the-odds-api.com/v4/sports/upcoming/odds/?regions=us&markets=h2h&apiKey=${apiKey}`;
+    // return fetch(oddUrl)
+    //   .then(checkStatus)
+    //   .then(parseJSON)
+    //   .then(convertToOddModel)
+    //   .catch((error: TypeError) => {
+    //     throw new Error(
+    //       'There was an error retrieving the odds. Please try again.'
+    //     );
+    //   });
+
+    return fetch('')
+      .then(delay(600))
+      .then(() => {
+        return UPCOMING_BY_SPORT_TEST_DATA;
+      });
+  },
+};
+
+export { sportsAPI, upcomingAPI, upcomingBySportAPI };

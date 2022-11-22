@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { oddsAPI } from '../utilities/api';
+import { upcomingBySportAPI } from '../utilities/api';
 import { Odd } from '../utilities/OddType';
 
 const SingleMatchPage = (props: any) => {

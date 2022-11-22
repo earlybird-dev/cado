@@ -11087,6 +11087,10 @@ body {
   position: absolute;
   right: 0px;
 }
+.stn-upcoming .sport-header {
+  font-size: 1.857143rem;
+  color: #ed1b42;
+}
 .stn-upcoming .nav-link {
   color: #fff;
 }
