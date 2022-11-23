@@ -90,6 +90,19 @@ const Bookmaker = (props: any) => {
   }
 };
 
+function msToTime(duration: number) {
+  if (duration < 0) {
+    return '00h00';
+  }
+  let hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
+  let minutes = Math.floor((duration / (1000 * 60)) % 60);
+
+  return (
+    String(hours).padStart(2, '0') + 'h:' + String(minutes).padStart(2, '0')
+  );
+}
+console.log(msToTime(300000));
+
 const UpcomingSport = (props: {
   sport_key: string;
   sport_title: string;
@@ -103,8 +116,11 @@ const UpcomingSport = (props: {
     markets: { key: string; outcome: { name: string; price: number }[] }[];
   }[];
 }) => {
-  const date = props.commence_time.slice(0, 10);
-  const time = props.commence_time.slice(11, 16);
+  const commence_time = new Date(props.commence_time);
+  const today = new Date();
+  const tomorrow = new Date(today);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  const msLeft = commence_time.getTime() - today.getTime();
 
   return (
     <div className="">
@@ -133,14 +149,26 @@ const UpcomingSport = (props: {
                       {props.sport_title}
                     </Link>
                     <span className="dot"></span>
-                    <span>{date}</span>, <span>{time}</span>
+                    <span>
+                      {commence_time.toDateString() === today.toDateString()
+                        ? 'Today'
+                        : commence_time.toDateString() ===
+                          tomorrow.toDateString()
+                        ? 'Tomorrow'
+                        : commence_time.toDateString()}
+                    </span>
+                    ,{' '}
+                    <span>
+                      {String(commence_time.getHours()).padStart(2, '0')}:
+                      {String(commence_time.getMinutes()).padStart(2, '0')}
+                    </span>
                   </span>
                 </div>
               </div>
               <div className="col-3 d-flex gap-2 justify-content-end align-items-center">
                 <div className="">
                   <div className="">
-                    <span className="">0h 00m</span>
+                    <span className="">{msToTime(msLeft)}</span>
                   </div>
                   <span className="">{props.bookmakers.length} Markets</span>
                 </div>
