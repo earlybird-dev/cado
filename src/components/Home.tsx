@@ -146,6 +146,11 @@ const Home = (props: any) => {
 
   const FilterUpcoming = (props: any) => {
     const upcomingSports = props.upcoming.map((odd: any) => {
+      const commence_time = new Date(odd.commence_time);
+      const today = new Date();
+      if (commence_time.getTime() < today.getTime()) {
+        return;
+      }
       return (
         <UpcomingSport
           key={odd.id}
