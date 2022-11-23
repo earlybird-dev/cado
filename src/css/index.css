@@ -11195,6 +11195,10 @@ body {
   padding-right: 1.28571rem;
   text-transform: uppercase;
 }
+#sport-filter .sport-btn a {
+  color: #fff;
+  text-decoration: none;
+}
 #sport-filter .selected-sport {
   background: rgba(237, 27, 66, 0.4);
   border: 1px solid rgba(237, 27, 66, 0.5);

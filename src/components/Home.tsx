@@ -9,30 +9,39 @@ import { UpcomingSport } from './Upcoming';
 const Home = (props: any) => {
   const [loading, setLoading] = useState(true);
   const [upcoming, setUpcoming] = useState<Odd[]>([]);
-  const [sports, setSports] = useState<string[]>([
-    'Basketball',
-    'Soccer',
-    'Tennis',
-    'Cricket',
-    'American Football',
-    'Boxing',
-  ]);
+  const [sports, setSports] = useState<
+    { sport_key: string; sport_title: string }[]
+  >([]);
 
   useEffect(() => {
     async function getUpcoming() {
       setLoading(true);
       try {
         const data = await upcomingAPI.get();
-        console.log(data);
+        console.log('data', data);
         setUpcoming(data);
         let sportList;
-        sportList = new Set(
-          data.map((match) => {
-            return match.sport_title;
-          })
-        );
+        sportList = data.map((match) => {
+          return {
+            sport_key: match.sport_key,
+            sport_title: match.sport_title,
+          };
+        });
         console.log('sportList', sportList);
-        setSports(Array.from(sportList).sort());
+
+        let unique: any = [];
+        let distinctSportList: {
+          sport_key: string;
+          sport_title: string;
+        }[] = [];
+        for (let i = 0; i < sportList.length; i++) {
+          if (!unique[sportList[i].sport_key]) {
+            distinctSportList.push(sportList[i]);
+            unique[sportList[i].sport_key] = 1;
+          }
+        }
+
+        setSports(distinctSportList);
       } finally {
         setLoading(false);
       }
@@ -51,7 +60,6 @@ const Home = (props: any) => {
       const scrollLeftBtn: HTMLElement | null = document.getElementById(
         'scroll-left-btn'
       );
-      const step = 1000;
       sportList &&
         sportList.scrollBy({
           top: 0,
@@ -73,7 +81,6 @@ const Home = (props: any) => {
         'scroll-left-btn'
       );
 
-      const step = 1000;
       sportList &&
         sportList.scrollBy({
           top: 0,
@@ -95,27 +102,16 @@ const Home = (props: any) => {
             onClick={ScrollLeft}
           >
             <span className="m-0 p-0">
-              <LeftArrowIcon />
+              <LeftArrowIcon size={14} />
             </span>
           </button>
           <div
             id="sport-list"
             className="d-flex flex-row gap-1 mx-1 overflow-auto"
           >
-            <button
-              className="btn btn-dark sport-btn selected-sport "
-              data-test="sportsFilterAllButton"
-            >
-              <span className="">All</span>
-            </button>
-
             {sports.map((sport: any) => {
               return (
-                <button
-                  key={sport}
-                  className="btn btn-dark sport-btn "
-                  data-test="sportsFilter0Button"
-                >
+                <button key={sport} className="btn btn-dark sport-btn ">
                   <span className="">
                     <span>
                       <span className="me-2">
@@ -123,7 +119,11 @@ const Home = (props: any) => {
                       </span>
                     </span>
                   </span>
-                  <span className="">{sport}</span>
+                  <span className="">
+                    <Link to={'/sports/' + sport.sport_key}>
+                      {sport.sport_title}
+                    </Link>
+                  </span>
                 </button>
               );
             })}
@@ -136,7 +136,7 @@ const Home = (props: any) => {
             onClick={ScrollRight}
           >
             <span className="m-0 p-0">
-              <RightArrowIcon />
+              <RightArrowIcon size={14} />
             </span>
           </button>
         </div>
@@ -154,6 +154,7 @@ const Home = (props: any) => {
       return (
         <UpcomingSport
           key={odd.id}
+          id={odd.id}
           sport_key={odd.sport_key}
           sport_title={odd.sport_title}
           home_team={odd.home_team}

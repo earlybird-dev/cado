@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import {
   CashOutIcon,
   InfoIcon,
@@ -94,16 +93,19 @@ function msToTime(duration: number) {
   if (duration < 0) {
     return '00h00';
   }
+  let days = Math.floor(duration / (1000 * 60 * 60 * 24));
   let hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
   let minutes = Math.floor((duration / (1000 * 60)) % 60);
 
-  return (
-    String(hours).padStart(2, '0') + 'h' + String(minutes).padStart(2, '0')
-  );
+  if (days > 0) {
+    return days + 'd ' + hours + 'h';
+  }
+  return hours + 'h ' + minutes + 'm';
 }
 console.log(msToTime(300000));
 
 const UpcomingSport = (props: {
+  id: string;
   sport_key: string;
   sport_title: string;
   commence_time: string;
@@ -127,12 +129,14 @@ const UpcomingSport = (props: {
       <div className="match border-bottom p-2 mb-3">
         <div className="match-info mb-3">
           <div className="row">
-            <a
-              className=" d-flex justify-content-between"
-              data-test="sportsPage5EventHeaderLink"
-              href="#"
-            >
-              <div className="col-9 d-flex gap-2 justify-content-start align-items-center">
+            <div className=" d-flex justify-content-between">
+              <a
+                className="col-9 d-flex gap-2 justify-content-start align-items-center"
+                data-bs-toggle="collapse"
+                aria-expanded="false"
+                aria-controls={'id' + props.id}
+                href={'#id' + props.id}
+              >
                 <div className="">
                   <div className="">
                     <span className="">
@@ -145,9 +149,7 @@ const UpcomingSport = (props: {
                     {props.home_team} v {props.away_team}
                   </p>
                   <span className="sport-title">
-                    <Link to={'/sports/' + props.sport_key}>
-                      {props.sport_title}
-                    </Link>
+                    {props.sport_title}
                     <span className="dot"></span>
                     <span>
                       {commence_time.toDateString() === today.toDateString()
@@ -164,8 +166,11 @@ const UpcomingSport = (props: {
                     </span>
                   </span>
                 </div>
-              </div>
-              <div className="col-3 d-flex gap-2 justify-content-end align-items-center">
+              </a>
+              <a
+                className="col-3 d-flex gap-2 justify-content-end align-items-center"
+                href="#"
+              >
                 <div className="">
                   <div className="">
                     <span className="">{msToTime(msLeft)}</span>
@@ -174,25 +179,27 @@ const UpcomingSport = (props: {
                 </div>
                 <div className="">
                   <span className="">
-                    <RightArrowIcon />
+                    <RightArrowIcon size={14} />
                   </span>
                 </div>
-              </div>
+              </a>
               <div className=""></div>
-            </a>
+            </div>
           </div>
         </div>
-        <div className="bookmakers d-flex flex-column gap-1">
-          {props.bookmakers &&
-            props.bookmakers.map((bookmaker) => {
-              return (
-                <Bookmaker
-                  key={bookmaker.key}
-                  title={bookmaker.title}
-                  markets={bookmaker.markets}
-                />
-              );
-            })}
+        <div id={'id' + props.id} className="collapse">
+          <div className="bookmakers d-flex flex-column gap-1">
+            {props.bookmakers &&
+              props.bookmakers.map((bookmaker) => {
+                return (
+                  <Bookmaker
+                    key={bookmaker.key}
+                    title={bookmaker.title}
+                    markets={bookmaker.markets}
+                  />
+                );
+              })}
+          </div>
         </div>
       </div>
     </div>

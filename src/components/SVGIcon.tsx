@@ -163,11 +163,11 @@ const SportIcon = () => {
   );
 };
 
-const RightArrowIcon = () => {
+const RightArrowIcon = (props: any) => {
   return (
     <svg
-      width="14"
-      height="14"
+      width={props.size}
+      height={props.size}
       className=""
       viewBox="0 -64 1024 1024"
       xmlns="http://www.w3.org/2000/svg"
@@ -183,11 +183,11 @@ const RightArrowIcon = () => {
   );
 };
 
-const LeftArrowIcon = () => {
+const LeftArrowIcon = (props: any) => {
   return (
     <svg
-      width="14"
-      height="14"
+      width={props.size}
+      height={props.size}
       className=""
       viewBox="0 -64 1024 1024"
       xmlns="http://www.w3.org/2000/svg"
