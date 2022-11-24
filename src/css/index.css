@@ -11174,7 +11174,13 @@ body {
 #sport-filter #sport-list::-webkit-scrollbar {
   display: none;
 }
+#sport-filter a {
+  color: #fff;
+  text-decoration: none;
+}
 #sport-filter .sport-btn {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgb(255, 255, 255);
   align-items: center;
   cursor: pointer;
   display: flex;
@@ -11194,10 +11200,6 @@ body {
   padding-left: 1.28571rem;
   padding-right: 1.28571rem;
   text-transform: uppercase;
-}
-#sport-filter .sport-btn a {
-  color: #fff;
-  text-decoration: none;
 }
 #sport-filter .selected-sport {
   background: rgba(237, 27, 66, 0.4);

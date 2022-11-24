@@ -8,18 +8,19 @@ import { UpcomingSport } from './Upcoming';
 
 const Home = (props: any) => {
   const [loading, setLoading] = useState(true);
-  const [upcoming, setUpcoming] = useState<Odd[]>([]);
-  const [sports, setSports] = useState<
+  const [upcomingMatches, setUpcomingMatches] = useState<Odd[]>([]);
+  const [upcomingSports, setUpcomingSports] = useState<
     { sport_key: string; sport_title: string }[]
   >([]);
 
   useEffect(() => {
-    async function getUpcoming() {
+    async function getUpcomingMatches() {
       setLoading(true);
       try {
         const data = await upcomingAPI.get();
         console.log('data', data);
-        setUpcoming(data);
+        setUpcomingMatches(data);
+
         let sportList;
         sportList = data.map((match) => {
           return {
@@ -27,9 +28,8 @@ const Home = (props: any) => {
             sport_title: match.sport_title,
           };
         });
-        console.log('sportList', sportList);
 
-        let unique: any = [];
+        let unique: any = {};
         let distinctSportList: {
           sport_key: string;
           sport_title: string;
@@ -37,20 +37,21 @@ const Home = (props: any) => {
         for (let i = 0; i < sportList.length; i++) {
           if (!unique[sportList[i].sport_key]) {
             distinctSportList.push(sportList[i]);
-            unique[sportList[i].sport_key] = 1;
+            unique[sportList[i].sport_key] = true;
           }
         }
+        console.log('unique', unique);
 
-        setSports(distinctSportList);
+        setUpcomingSports(distinctSportList);
       } finally {
         setLoading(false);
       }
     }
-    getUpcoming();
+    getUpcomingMatches();
   }, []);
 
   const SportFilter = () => {
-    const ScrollRight = () => {
+    const ScrollButton = (direction: 'left' | 'right') => {
       const sportList: HTMLElement | null = document.getElementById(
         'sport-list'
       );
@@ -60,35 +61,27 @@ const Home = (props: any) => {
       const scrollLeftBtn: HTMLElement | null = document.getElementById(
         'scroll-left-btn'
       );
+
       sportList &&
         sportList.scrollBy({
           top: 0,
-          left: +1000,
+          left: direction === 'right' ? +1000 : -1000,
           behavior: 'smooth',
         });
 
-      scrollLeftBtn && scrollLeftBtn.classList.remove('d-none');
-      scrollRightBtn && scrollRightBtn.classList.add('d-none');
+      if (direction === 'right') {
+        scrollLeftBtn && scrollLeftBtn.classList.remove('d-none');
+        scrollRightBtn && scrollRightBtn.classList.add('d-none');
+      } else {
+        scrollLeftBtn && scrollLeftBtn.classList.add('d-none');
+        scrollRightBtn && scrollRightBtn.classList.remove('d-none');
+      }
+    };
+    const ScrollRight = () => {
+      ScrollButton('right');
     };
     const ScrollLeft = () => {
-      const sportList: HTMLElement | null = document.getElementById(
-        'sport-list'
-      );
-      const scrollRightBtn: HTMLElement | null = document.getElementById(
-        'scroll-right-btn'
-      );
-      const scrollLeftBtn: HTMLElement | null = document.getElementById(
-        'scroll-left-btn'
-      );
-
-      sportList &&
-        sportList.scrollBy({
-          top: 0,
-          left: -1000,
-          behavior: 'smooth',
-        });
-      scrollLeftBtn && scrollLeftBtn.classList.add('d-none');
-      scrollRightBtn && scrollRightBtn.classList.remove('d-none');
+      ScrollButton('left');
     };
 
     return (
@@ -96,7 +89,7 @@ const Home = (props: any) => {
         <div className="d-flex flex-row justify-content-between">
           <button
             id="scroll-left-btn"
-            className="scroll-btn scroll-btn-left m-0 p-0 d-none"
+            className="scroll-btn scroll-btn-left me-3 p-0 d-none"
             aria-label="Scroll left"
             data-test="leftArrowTabButton"
             onClick={ScrollLeft}
@@ -107,30 +100,28 @@ const Home = (props: any) => {
           </button>
           <div
             id="sport-list"
-            className="d-flex flex-row gap-1 mx-1 overflow-auto"
+            className="d-flex flex-row gap-1 mx-1 flex-grow-1 overflow-auto"
           >
-            {sports.map((sport: any) => {
+            {upcomingSports.map((sport: any) => {
               return (
-                <button key={sport} className="btn btn-dark sport-btn ">
-                  <span className="">
-                    <span>
-                      <span className="me-2">
-                        <SportIcon />
+                <Link key={sport.sport_key} to={'/sports/' + sport.sport_key}>
+                  <button className="btn btn-dark sport-btn ">
+                    <span className="">
+                      <span>
+                        <span className="me-2">
+                          <SportIcon />
+                        </span>
                       </span>
                     </span>
-                  </span>
-                  <span className="">
-                    <Link to={'/sports/' + sport.sport_key}>
-                      {sport.sport_title}
-                    </Link>
-                  </span>
-                </button>
+                    <span className="">{sport.sport_title}</span>
+                  </button>
+                </Link>
               );
             })}
           </div>
           <button
             id="scroll-right-btn"
-            className="scroll-btn scroll-btn-right m-0 p-0"
+            className="scroll-btn scroll-btn-right ms-3 p-0"
             aria-label="Scroll right"
             data-test="rightArrowTabButton"
             onClick={ScrollRight}
@@ -144,23 +135,23 @@ const Home = (props: any) => {
     );
   };
 
-  const FilterUpcoming = (props: any) => {
-    const upcomingSports = props.upcoming.map((odd: any) => {
-      const commence_time = new Date(odd.commence_time);
+  const FilterUpcomingMatches = (props: any) => {
+    const upcomingSports = props.upcomingMatches.map((match: any) => {
+      const commence_time = new Date(match.commence_time);
       const today = new Date();
-      if (commence_time.getTime() < today.getTime()) {
-        return;
-      }
+      // if (commence_time.getTime() < today.getTime()) {
+      //   return;
+      // }
       return (
         <UpcomingSport
-          key={odd.id}
-          id={odd.id}
-          sport_key={odd.sport_key}
-          sport_title={odd.sport_title}
-          home_team={odd.home_team}
-          away_team={odd.away_team}
-          commence_time={odd.commence_time}
-          bookmakers={odd.bookmakers}
+          key={match.id}
+          id={match.id}
+          sport_key={match.sport_key}
+          sport_title={match.sport_title}
+          home_team={match.home_team}
+          away_team={match.away_team}
+          commence_time={match.commence_time}
+          bookmakers={match.bookmakers}
         />
       );
     });
@@ -180,7 +171,11 @@ const Home = (props: any) => {
           <div id="upcoming" className="col-12 col-lg-8">
             <div className="bg-black rounded p-2 p-md-3 p-lg-4 ">
               <h1 className="text-white">Upcoming</h1>
-              {loading ? <Loading /> : <FilterUpcoming upcoming={upcoming} />}
+              {loading ? (
+                <Loading />
+              ) : (
+                <FilterUpcomingMatches upcomingMatches={upcomingMatches} />
+              )}
             </div>
           </div>
           <div id="next" className="col-12 col-lg-4">

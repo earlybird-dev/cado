@@ -358,7 +358,14 @@ body {
     display: none;
   }
 
+  a {
+    color: $white;
+    text-decoration: none;
+  }
+
   .sport-btn {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgb(255, 255, 255);
     align-items: center;
     cursor: pointer;
     display: flex;
@@ -378,11 +385,6 @@ body {
     padding-left: 1.28571rem;
     padding-right: 1.28571rem;
     text-transform: uppercase;
-
-    a {
-      color: $white;
-      text-decoration: none;
-    }
   }
 
   .selected-sport {

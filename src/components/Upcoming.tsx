@@ -91,7 +91,7 @@ const Bookmaker = (props: any) => {
 
 function msToTime(duration: number) {
   if (duration < 0) {
-    return '00h00';
+    return 'See Results';
   }
   let days = Math.floor(duration / (1000 * 60 * 60 * 24));
   let hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
@@ -102,7 +102,6 @@ function msToTime(duration: number) {
   }
   return hours + 'h ' + minutes + 'm';
 }
-console.log(msToTime(300000));
 
 const UpcomingSport = (props: {
   id: string;
