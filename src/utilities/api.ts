@@ -8,7 +8,7 @@ import {
 } from './data';
 
 const url = 'https://api.the-odds-api.com/v4/sports';
-const apiKey = '947a3cf2a3a6377b4c11c9d1b5b2a804';
+const apiKey = '947a3cf2a3a6377b4c11c9d1b5b2a804'; //70909d75c5b91d9f64b2605657e6620a
 const sportUrl = `${url}?apiKey=${apiKey}`;
 
 function delay(ms: number) {
