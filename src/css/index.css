@@ -11063,6 +11063,91 @@ body {
   background-color: #fff;
 }
 
+.stn-match-hero {
+  min-height: 16.4286rem;
+  background-color: #000000;
+  flex-basis: auto;
+  height: auto;
+}
+.stn-match-hero:before {
+  background-color: #000000;
+  inset: 0px;
+  content: "";
+  opacity: 0.7;
+  pointer-events: none;
+  position: absolute;
+  z-index: 100;
+}
+.stn-match-hero:after {
+  background-image: linear-gradient(rgb(237, 27, 66), rgb(21, 138, 220));
+  inset: 0px;
+  content: "";
+  opacity: 0.25;
+  pointer-events: none;
+  position: absolute;
+  z-index: 200;
+}
+.stn-match-hero button {
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: background-color 0.2s ease 0s, color 0.2s ease 0s;
+  height: 1.71429rem;
+  width: 1.71429rem;
+}
+.stn-match-hero .match-img img {
+  object-fit: cover;
+}
+.stn-match-hero .match-info {
+  z-index: 300;
+}
+.stn-match-hero .match-info .match-time {
+  color: #fff;
+  font-size: 1.28571rem;
+  font-weight: 600;
+  line-height: 1.25em;
+}
+@media (min-width: 768px) {
+  .stn-match-hero .match-info .match-time {
+    font-size: 1.71429rem;
+  }
+}
+.stn-match-hero .match-info .match-day {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.785714rem;
+  font-weight: normal;
+  letter-spacing: 0.0714286rem;
+  line-height: 1.25em;
+  text-transform: uppercase;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .stn-match-hero .match-info h2, .stn-match-hero .match-info .h2 {
+    font-size: 1.92857rem;
+  }
+}
+.stn-match-hero .match-info h2 .match-team, .stn-match-hero .match-info .h2 .match-team {
+  align-items: center;
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex: 1 1 0%;
+  font-size: 0.857143rem;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: -0.0178571rem;
+  line-height: 1;
+  max-width: 28.5714rem;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+}
+@media (min-width: 768px) {
+  .stn-match-hero .match-info h2 .match-team, .stn-match-hero .match-info .h2 .match-team {
+    font-size: 2.28571rem;
+  }
+}
+@media (max-width: 375px) {
+  .stn-match-hero .match-info h2 .match-team, .stn-match-hero .match-info .h2 .match-team {
+    font-size: 1rem;
+  }
+}
+
 .stn-upcoming h1, .stn-upcoming .h1 {
   align-items: center;
   background-color: rgb(10, 10, 10);
