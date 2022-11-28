@@ -6,6 +6,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto&family=Rubik+Glitch&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -10938,9 +10939,13 @@ textarea.form-control-lg {
   box-sizing: border-box;
 }
 
+html {
+  font-size: 0.875em;
+}
+
 body {
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   color: #fff;
   background-color: #1b1b1b;
 }
@@ -11119,11 +11124,11 @@ body {
   text-transform: uppercase;
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  .stn-match-hero .match-info h2, .stn-match-hero .match-info .h2 {
+  .stn-match-hero .match-info .match-teams {
     font-size: 1.92857rem;
   }
 }
-.stn-match-hero .match-info h2 .match-team, .stn-match-hero .match-info .h2 .match-team {
+.stn-match-hero .match-info .match-teams .match-team {
   align-items: center;
   color: rgb(255, 255, 255);
   display: flex;
@@ -11138,12 +11143,12 @@ body {
   overflow-wrap: break-word;
 }
 @media (min-width: 768px) {
-  .stn-match-hero .match-info h2 .match-team, .stn-match-hero .match-info .h2 .match-team {
+  .stn-match-hero .match-info .match-teams .match-team {
     font-size: 2.28571rem;
   }
 }
 @media (max-width: 375px) {
-  .stn-match-hero .match-info h2 .match-team, .stn-match-hero .match-info .h2 .match-team {
+  .stn-match-hero .match-info .match-teams .match-team {
     font-size: 1rem;
   }
 }

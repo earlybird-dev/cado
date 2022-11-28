@@ -1,5 +1,5 @@
 import React from 'react';
-import { PromoIcon, VSIcon } from './SVGIcon';
+import { DownArrowIcon, PromoIcon, VSIcon } from './SVGIcon';
 
 interface Carousel {
   active: boolean | undefined;
@@ -68,39 +68,24 @@ const MatchHero = (props: any) => {
                   <div className="d-inline-block position-absolute end-0">
                     <button className="d-flex border-0 align-items-center justify-content-center rounded-circle">
                       <span className="f92nxf7 f1ry9gvn">
-                        <svg
-                          width="12"
-                          height="12"
-                          className="fpz9ar8"
-                          viewBox="0 -64 1024 1024"
-                          xmlns="http://www.w3.org/2000/svg"
-                          strokeWidth="1"
-                        >
-                          <path
-                            transform="translate(0, 896), scale(1, -1)"
-                            stroke="#ED1B42"
-                            fill="#FFF"
-                            fillOpacity="0.5"
-                            d="M512 115.2l-486.4 486.4 119.467 119.467 366.933-366.933 366.933 366.933 119.467-119.467z"
-                          ></path>
-                        </svg>
+                        <DownArrowIcon />
                       </span>
                     </button>
                     <div className="f1fqtcfr"></div>
                   </div>
                 </div>
               </div>
-              <div className="f96or0t w-100">
-                <div className="f96or0t w-100">
+              <div className="w-100">
+                <div className="w-100">
                   <span></span>
-                  <div className="f96or0t w-100">
-                    <h2 className="d-flex align-items-center justify-content-center w-100">
+                  <div className="w-100">
+                    <h2 className="match-teams d-flex align-items-center justify-content-center w-100">
                       <span className="match-team d-flex justify-content-end align-items-center">
                         Brisbane Lions Women
                       </span>
                       <span className="f1m8uqsy">
                         <span className="fnlae7i f1ry9gvn mx-2 mx-md-3">
-                          <VSIcon />
+                          <VSIcon size={50} />
                         </span>
                       </span>
                       <span className="match-team d-flex justify-content-start align-items-center">
