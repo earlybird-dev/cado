@@ -50,7 +50,7 @@ const MatchHero = (props: any) => {
             <div className="w-100 h-100 position-absolute overflow-hidden top-0 start-0">
               <img
                 className="w-100 h-100"
-                src="https://pointsbet.com.au/assets/img/sports/banners/aussie-rules.banner.md.jpg"
+                src="/images/aussie-rules.banner.md.jpg"
                 alt="aussie-rules"
               />
             </div>
@@ -78,10 +78,10 @@ const MatchHero = (props: any) => {
               <div className="w-100">
                 <div className="w-100">
                   <span></span>
-                  <div className="w-100">
+                  <div className="w-100 ">
                     <h2 className="match-teams d-flex align-items-center justify-content-center w-100">
                       <span className="match-team d-flex justify-content-end align-items-center">
-                        Brisbane Lions Women
+                        {props.home_team}
                       </span>
                       <span className="f1m8uqsy">
                         <span className="fnlae7i f1ry9gvn mx-2 mx-md-3">
@@ -89,7 +89,7 @@ const MatchHero = (props: any) => {
                         </span>
                       </span>
                       <span className="match-team d-flex justify-content-start align-items-center">
-                        Melbourne Women
+                        {props.away_team}
                       </span>
                     </h2>
                   </div>

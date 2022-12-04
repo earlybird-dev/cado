@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, Route } from 'react-router-dom';
 import {
   CashOutIcon,
   InfoIcon,
@@ -166,9 +167,16 @@ const UpcomingSport = (props: {
                   </span>
                 </div>
               </a>
-              <a
+              <Link
                 className="col-3 d-flex gap-2 justify-content-end align-items-center"
-                href="#"
+                to={'/match/' + props.id}
+                state={{
+                  sport_key: props.sport_key,
+                  sport_title: props.sport_title,
+                  commence_time: props.commence_time,
+                  home_team: props.home_team,
+                  away_team: props.away_team,
+                }}
               >
                 <div className="">
                   <div className="">
@@ -181,7 +189,7 @@ const UpcomingSport = (props: {
                     <RightArrowIcon size={14} />
                   </span>
                 </div>
-              </a>
+              </Link>
               <div className=""></div>
             </div>
           </div>

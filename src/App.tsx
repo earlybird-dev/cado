@@ -23,7 +23,6 @@ function MatchLayout(props: any) {
   return (
     <>
       <Navbar />
-      <MatchHero />
       <SingleMatchPage />
     </>
   );

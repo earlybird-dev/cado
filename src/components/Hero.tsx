@@ -74,19 +74,19 @@ const Hero = (props: any) => {
         <div className="carousel-inner">
           <CarouselItem
             active={true}
-            src="https://pointsbet.com.au/assets/content/au/homecarousel/images/Generic-BTE-CDESK.png"
+            src="/images/Generic-BTE-CDESK.png"
             title="BEST TOTE EXOTICS ON EVERY RACE"
             body="This Saturday on All Races at Kembla Grange & Ballarat."
           />
           <CarouselItem
             active={false}
-            src="https://pointsbet.com.au/assets/content/au/homecarousel/images/WorldCup-CDESK.jpg"
+            src="/images/WorldCup-CDESK.jpg"
             title="WORLD CUP - SCORE FIRST YOU WIN"
             body="Early Payout: On Australia Matches in Group Stage, if your selection scores the first goal of the match we'll pay you out as a winner. First $50 staked."
           />
           <CarouselItem
             active={false}
-            src="https://pointsbet.com.au/assets/content/au/homecarousel/images/22MBS-CDESK.png"
+            src="/images/22MBS-CDESK.png"
             title="BONUS BACK TO 4TH EVERY DAY"
             body="Run 2nd, 3rd or 4th in selected races every day and get Bonus back up to $50."
           />
