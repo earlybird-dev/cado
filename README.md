@@ -1,4 +1,6 @@
-# Installation
+# NEW VERSION IS COMING
 
-`npx create-react-app cado --template typescript`
-`npm install typestyle --save`
+- Live: https://redbet-au.web.app/
+- Github: https://github.com/earlybird-dev/redbet
+
+
